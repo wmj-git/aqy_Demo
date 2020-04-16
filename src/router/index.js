@@ -6,6 +6,7 @@ Vue.use(Router)
 /* Layout */
 import Layout from '@/layout'
 
+import VersionManage from '@/router/module/version.js'
 /**
  * Note: sub-menu only appear when route children.length >= 1
  * Detail see: https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
@@ -54,19 +55,19 @@ export const constantRoutes = [
       meta: { title: 'Dashboard', icon: 'dashboard' }
     }]
   },
-
+  /*
   {
     path: '/example',
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    meta: { title: '游戏管理', icon: 'example' },
     children: [
       {
         path: 'table',
         name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        component: () => import('@/views/versionmanage/index'),
+        meta: { title: '版本管理', icon: 'table' }
       },
       {
         path: 'tree',
@@ -146,19 +147,8 @@ export const constantRoutes = [
         meta: { title: 'menu2' }
       }
     ]
-  },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
-      }
-    ]
-  },
-
+  },*/
+  VersionManage,
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
