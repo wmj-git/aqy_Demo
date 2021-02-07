@@ -63,26 +63,27 @@ input::-webkit-input-placeholder {
 input[type=checkbox]{
   cursor: pointer;
   position: relative;
-  width: 16px;
-  height: 16px;
+  width: 0;
+  height: 0;
   font-size: 14px;
   margin-right: 8px;
 
   &::after {
     position: absolute;
-    top: 0;
+    top: -9px;
     //修改默认背景色
     background-color: #fff;
     border: 1px solid #C4C4C4FF;
     //修改默认对勾颜色
     color: #C4C4C4FF;
     width: 16px;
-    height: 13px;
-    padding-top: 3px;
+    height: 15px;
+    padding-top: 2px;
     display: inline-block;
     visibility: visible;
     text-align: center;
     content: ' ';
+    border-radius: 3px;
   }
   &:checked::after{
     content: "\221A";

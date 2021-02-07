@@ -36,45 +36,48 @@
             @keyup.enter.native="handleLogin"
           />
         </el-form-item>
-       <!-- <el-form-item prop="code" class="form_item">
-        <span class="svg-container">
-          <svg-icon icon-class="code"/>
-        </span>
-          <input
-            class="code"
-            ref="code"
-            v-model="loginForm.code"
-            :placeholder="$t('login_page.placeholder.code')"
-            name="code"
-            type="text"
-            tabindex="3"
-            auto-complete="on"
-          />
-        </el-form-item>-->
+        <!-- <el-form-item prop="code" class="form_item">
+         <span class="svg-container">
+           <svg-icon icon-class="code"/>
+         </span>
+           <input
+             class="code"
+             ref="code"
+             v-model="loginForm.code"
+             :placeholder="$t('login_page.placeholder.code')"
+             name="code"
+             type="text"
+             tabindex="3"
+             auto-complete="on"
+           />
+         </el-form-item>-->
         <el-form-item class="form_item">
           <div class="flex_layout">
-            <p>
-              <input class="remember" type="checkbox" name="remember" checked/>
-              <span>{{$t('login_page.login_info.remember_login')}}</span>
+            <p class="check">
+              <input class="remember" type="checkbox" name="remember" id="isCheck" @click="isCheck()" checked/>
+              <label for="isCheck">{{$t('login_page.login_info.remember_login')}}</label>
             </p>
             <p class="forget">{{$t('login_page.login_info.forget')}}</p>
           </div>
 
         </el-form-item>
-        <el-button v-for="(item, index) in $t('login_page.login_btn_text')" class="operate_btn" :class="activeIndex == index ? 'active':''"
-                   @click.native.prevent="handleLogin(index)">{{ item}}</el-button>
+        <el-button v-for="(item, index) in $t('login_page.login_btn_text')" class="operate_btn"
+                   :class="activeIndex == index ? 'active':''"
+                   @click.native.prevent="handleLogin(index)">{{ item}}
+        </el-button>
       </el-form>
     </div>
   </div>
 </template>
 
 <script>
-  import {validUsername} from '@/utils/validate'
-  import Index from "../../components/common/table/index";
+  import { validUsername } from '@/utils/validate'
+  import Index from '../../components/common/table/index'
+  import { Base64 } from 'js-base64'
 
   export default {
     name: 'Login',
-    components: {Index},
+    components: { Index },
     data() {
       const validateUsername = (rule, value, callback) => {
         if (!validUsername(value)) {
@@ -98,7 +101,7 @@
         }
       }
       return {
-        isChecked: true,
+        isRemember: true,
         activeIndex: 0,
         loginForm: {
           username: '',
@@ -106,9 +109,9 @@
           code: ''
         },
         loginRules: {
-          username: [{required: true, trigger: 'blur', validator: validateUsername}],
-          password: [{required: true, trigger: 'blur', validator: validatePassword}],
-          code: [{required: true, trigger: 'blur', validator: validateCode}]
+          username: [{ required: true, trigger: 'blur', validator: validateUsername }],
+          password: [{ required: true, trigger: 'blur', validator: validatePassword }],
+          code: [{ required: true, trigger: 'blur', validator: validateCode }]
         },
         loading: false,
         passwordType: 'password',
@@ -125,14 +128,22 @@
     },
     methods: {
       handleLogin(index) {
-        this.activeIndex = index;
-        if(index == 0){
+        this.activeIndex = index
+        if (index == 0) {
           this.$refs.loginForm.validate(valid => {
             if (valid) {
               this.loading = true
               this.$store.dispatch('user/login', this.loginForm).then(() => {
-                this.$router.push({path: this.redirect || '/'})
+                this.$router.push({ path: this.redirect || '/' })
                 this.loading = false
+                if (this.isRemember) {
+                  this.setCookie('user', this.loginForm.username, 30)
+                  const pwd = Base64.encode(this.loginForm.password)
+                  this.setCookie('pwd', pwd, 30)
+                } else {
+                  this.setCookie('user', '', 30)
+                  this.setCookie('pwd', '', 0)
+                }
               }).catch(() => {
                 this.loading = false
               })
@@ -141,13 +152,52 @@
               return false
             }
           })
-        } else{
+        } else {
           console.log('申请成为开发者')
         }
+      },
+      isCheck() {
+        this.isRemember = event.target.checked
+      },
+      initForm() {
+        const username = this.getCookie('user')
+        const pwd = this.getCookie('pwd')
+        if (username && pwd) {
+          this.loginForm.username = username
+          this.loginForm.password = pwd
+        }
+      },
+      setCookie(cName, value, expireDays) {
+        let exDate = new Date()
+        exDate = exDate.setDate(exDate.getDate() + expireDays)
+        document.cookie = cName + '=' +
+          value +
+          ((expireDays === undefined) ? '' : ';expires=' + new Date(exDate).toUTCString())
+      },
+
+      getCookie(key) {
+        if (document.cookie.length > 0) {
+          let start = document.cookie.indexOf(key + '=')
+          if (start !== -1) {
+            start = start + key.length + 1
+            let end = document.cookie.indexOf(';', start)
+
+            if (end === -1) {
+              end = document.cookie.length
+              return Base64.decode(document.cookie.substring(start, end))
+            } else {
+              return document.cookie.substring(start, end)
+            }
+          }
+        }
+        return ''
       }
+    },
+    created() {
+      this.initForm()
     }
   }
 </script>
 <style lang="scss" scoped>
-@import "../../styles/login";
+  @import "../../styles/login";
 </style>

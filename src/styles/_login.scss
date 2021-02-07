@@ -39,9 +39,13 @@
             padding: 6px;
           }
         }
-        & span{
+        & label{
           color: #666;
           font-size: 14px;
+          font-weight: normal;
+          &:hover{
+            cursor: pointer;
+          }
         }
         & .forget{
           color: #00BF6C;
@@ -63,8 +67,14 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          & p:hover{
-            cursor: pointer;
+          & p{
+            &.check{
+              display: flex;
+              align-items: center;
+            }
+            &:hover{
+              cursor: pointer;
+            }
           }
         }
       }
