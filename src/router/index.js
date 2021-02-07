@@ -22,39 +22,25 @@ export const constantRoutes = [
     component: () => import('@/views/404'),
     hidden: true
   },
-
   {
     path: '/',
     component: Layout,
-    redirect: '/tabledata',
-    children: [{
-      path: 'slide-logo',
-      name: '',
-      component: () => import('@/views/slide-logo/slide-logo'),
-      meta: { title: '', icon: ''}
-    }]
-  },
-  {
-    path: '/tabledata',
-    component: Layout,
-    redirect: '/tabledata/account',
-    name: 'tabledata',
-    alwaysShow: true,
+    redirect: '/dashboard',
     meta: {
       title: '首页',
       icon: 'table'
     },
     children: [
       {
-        path: 'account',
+        path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
-        name: 'dashboard',
-        meta: { title: '我的账户', icon: 'table' }
+        name: 'Dashboard',
+        meta: { title: '我的账户', icon: 'dashboard', affix: true }
       },
       {
-        path: 'application-manage',
+        path: 'account',
         component: () => import('@/views/dashboard/index'),
-        name: 'dashboard',
+        name: 'Dashboard',
         meta: { title: '应用管理', icon: 'table' },
         alwaysShow: true,
         children: [

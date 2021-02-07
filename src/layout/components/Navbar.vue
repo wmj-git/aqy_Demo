@@ -1,9 +1,9 @@
 <template>
-  <div class="navbar">
+  <div class="navbar" :class="tagsShow== true?'': 'display'">
     <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
 
     <breadcrumb class="breadcrumb-container" />
-    <v-tags />
+    <v-tags v-if="tagsShow"/>
     <div class="right-menu">
       <template v-if="device!=='mobile'">
         <screenfull id="screenfull" class="right-menu-item hover-effect" />
@@ -57,6 +57,11 @@ export default {
       'device'
     ])
   },
+  data(){
+    return {
+      tagsShow: this.$store.state.settings.tagsView
+    }
+  },
   methods: {
     toggleSideBar() {
       this.$store.dispatch('app/toggleSideBar')
@@ -74,7 +79,7 @@ export default {
         msg[i].name && arr.push(msg[i].name)
       }
       this.tagsList = arr
-    })
+    });
   }
 }
 </script>
@@ -86,7 +91,9 @@ export default {
   position: relative;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
-
+  &.display{
+    height: 53px;
+  }
   .hamburger-container {
     line-height: 46px;
     height: 100%;
