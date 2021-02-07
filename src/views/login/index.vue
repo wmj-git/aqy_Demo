@@ -4,7 +4,7 @@
       <img src="@/assets/img/login_bg.png"/>
     </div>
     <div class="login_from_box">
-      <img src="@/assets/img/logo.png" class="from_logo"/>
+      <img :src="$t('login_page.logo.img')" class="from_logo"/>
       <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on"
                label-position="left">
         <el-form-item prop="username" class="form_item">

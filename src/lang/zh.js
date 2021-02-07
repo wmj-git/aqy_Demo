@@ -152,10 +152,15 @@ module.exports = {
       remember_login: '记住我的登录信息',
       forget: '忘记密码'
     },
+    logo: {
+      img: require('../assets/img/logo.png')
+    },
+    login_btn_text: ['登录', '申请成为开发者']
+  },
+  main_menu: {
     sideBar: {
       logo_icon: require('../assets/img/logo_icon.png'),
       logo: require('../assets/img/logo.png')
-    },
-    login_btn_text: ['登录', '申请成为开发者']
+    }
   }
 }

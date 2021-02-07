@@ -136,5 +136,31 @@ module.exports = {
       ],
       footer_status: 'Copyright © 2020爱奇艺智能All Rights Reserved 渝ICP备18002599号'
     }
+  },
+  login_page: {
+    placeholder: {
+      username: 'Account',
+      pwd: 'Password',
+      code: 'Verification Code'
+    },
+    error_message: {
+      username: '*No account/wrong account or password',
+      pwd: 'The password must be no less than 6 digits',
+      code: 'Captcha error'
+    },
+    login_info: {
+      remember_login: 'Remember my login information',
+      forget: 'Forgot Password'
+    },
+    logo: {
+      img: require('../assets/img/logo_en.png')
+    },
+    login_btn_text: ['Login', 'Developer application']
+  },
+  main_menu: {
+    sideBar: {
+      logo_icon: require('../assets/img/logo_icon.png'),
+      logo: require('../assets/img/logo_en.png')
+    }
   }
 }
