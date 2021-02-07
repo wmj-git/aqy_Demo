@@ -34,7 +34,7 @@
 </template>
 <script>
 import cesSearch from '@/components/common/Form/SearchForm'
-import BaseTable from '@/components/common/Table/index'
+import BaseTable from '@/components/common/table/index'
 import cesModal from '@/components/common/Modal/Modal'
 import cesEdit from '@/components/common/Form/editForm'
 import { mapGetters } from 'vuex'

@@ -5,6 +5,10 @@
     <breadcrumb class="breadcrumb-container" />
     <v-tags />
     <div class="right-menu">
+      <template v-if="device!=='mobile'">
+        <screenfull id="screenfull" class="right-menu-item hover-effect" />
+      </template>
+
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
           <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
@@ -36,18 +40,21 @@
 import { mapGetters } from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
+import Screenfull from '@/components/Screenfull'
 import vTags from '@/layout/components/Sidebar/Tags'
 import bus from './bus.js'
 export default {
   components: {
     Breadcrumb,
     Hamburger,
-    vTags
+    vTags,
+    Screenfull
   },
   computed: {
     ...mapGetters([
       'sidebar',
-      'avatar'
+      'avatar',
+      'device'
     ])
   },
   methods: {
@@ -109,7 +116,6 @@ export default {
     .right-menu-item {
       display: inline-block;
       padding: 0 8px;
-      height: 100%;
       font-size: 18px;
       color: #5a5e66;
       vertical-align: text-bottom;

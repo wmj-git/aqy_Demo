@@ -30,13 +30,13 @@
       :that="that"
       :modal-cfg="modalCfg"
     >
-      <ces-edit
+   <!--   <ces-edit
         ref="cesEdit"
         :that="that"
         :edit-cfg="editForm"
         :edit-data="editData"
         :edit-rules="editRules"
-      />
+      />-->
     </ces-modal>
   </div>
 </template>
@@ -45,14 +45,14 @@
 import cesSearch from '@/components/common/Form/searchForm'
 import cesTable from '@/components/common/Table/Table'
 import cesModal from '@/components/common/Modal/Modal'
-import cesEdit from '@/components/common/Form/operateForm'
+// import cesEdit from '@/components/common/Form/operateForm'
 
 export default {
   components: {
     cesTable,
     cesSearch,
     cesModal,
-    cesEdit
+    // cesEdit
   },
   data() {
     return {
