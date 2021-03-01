@@ -1,7 +1,7 @@
 module.exports = {
   index_page: {
     index_nav: {
-      nav_list: ['开发文档', '发布管理', '我的账号'],
+      nav_list: ['Develop', 'Distribute', 'Account'],
       logo: require('../assets/img/logo_en.png')
     },
     banner: {

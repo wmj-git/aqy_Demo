@@ -76,6 +76,12 @@
               cursor: pointer;
             }
           }
+          &.en_flex{
+            display: block;
+            & p.forget{
+              float: right;
+            }
+          }
         }
       }
       & .operate_btn{

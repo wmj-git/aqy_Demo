@@ -1,45 +1,53 @@
 <template>
   <div>
-    <svg-icon :icon-class="isChange?'lang':'lang'" @click="click" />
+    <button @click="click" class="lan_btn">{{ lan_name }}</button>
   </div>
 </template>
 
 <script>
 
-export default {
-  name: 'LanChange',
-  data() {
-    return {
-      isChange: false
-    }
-  },
-  mounted() {
-    this.init()
-  },
-  beforeDestroy() {
-    this.destroy()
-  },
-  methods: {
-    click() {
-      if (this.$i18n.locale === 'zh') {
-        this.$i18n.locale = 'en';
-      } else {
-        this.$i18n.locale = 'zh'
+  export default {
+    name: 'LanChange',
+    data() {
+      return {
+        lan_name: 'En'
       }
     },
-    init() {},
-    destroy(){}
+    mounted() {
+      this.init()
+    },
+    beforeDestroy() {
+      this.destroy()
+    },
+    methods: {
+      click() {
+        if (this.$i18n.locale === 'zh') {
+          this.$i18n.locale = 'en';
+          this.lan_name = '中';
+        } else {
+          this.$i18n.locale = 'zh';
+          this.lan_name = 'En';
+        }
+      },
+      init() {
+      },
+      destroy() {
+      }
+    }
   }
-}
 </script>
 
-<style scoped>
-.screenfull-svg {
-  display: inline-block;
-  cursor: pointer;
-  fill: #5a5e66;;
-  width: 20px;
-  height: 20px;
-  vertical-align: 10px;
-}
+<style scoped lang="scss">
+  .lan_btn {
+    background-color: #00bf6c;
+    color: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 24px;
+    font-size: 14px;
+    border-radius: 24px;
+    &:focus {
+      outline: 0;
+    }
+  }
 </style>

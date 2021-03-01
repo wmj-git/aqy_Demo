@@ -52,7 +52,7 @@
            />
          </el-form-item>-->
         <el-form-item class="form_item">
-          <div class="flex_layout">
+          <div class="flex_layout" :class="current_lan=='en' ? 'en_flex': ''">
             <p class="check">
               <input class="remember" type="checkbox" name="remember" id="isCheck" @click="isCheck()" checked/>
               <label for="isCheck">{{$t('login_page.login_info.remember_login')}}</label>
@@ -103,6 +103,7 @@
       return {
         isRemember: true,
         activeIndex: 0,
+        current_lan: '',
         loginForm: {
           username: '',
           password: '',
@@ -125,6 +126,11 @@
         },
         immediate: true
       }
+    },
+    mounted(){
+      console.log("吃美食城马上凑")
+      this.current_lan = this.$i18n.locale;
+      console.log("当前语言", this.current_lan);
     },
     methods: {
       handleLogin(index) {
