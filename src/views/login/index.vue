@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
     <div class="login_img">
-      <img src="@/assets/img/login_bg.png"/>
+      <img src="@/assets/img/pic_login.png"/>
     </div>
     <div class="login_from_box">
       <img :src="$t('login_page.logo.img')" class="from_logo"/>

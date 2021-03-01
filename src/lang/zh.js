@@ -60,7 +60,7 @@ module.exports = {
         {
           img: require('../assets/img/pic_04.png'),
           name: '高级渲染',
-          u_name: '注视点渲染、VR合成器图层渲染、单通道渲染（规划中）Plugin'
+          u_name: '注视点渲染、VR合成器图层渲染、单通道渲染（规划中）'
         }
       ],
       content_bottom: [

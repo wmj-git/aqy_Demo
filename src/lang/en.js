@@ -42,37 +42,37 @@ module.exports = {
       content_top: [
         {
           img: require('../assets/img/pic_01.png'),
-          name: 'Main Game Engine Support',
-          u_name: 'Unity, Unreal (Coming Soon)'
+          name: 'Multiple interaction Methods',
+          u_name: '6DOD Game Controller, Hand Tracking, Virtual Keyboard'
         },
         {
           img: require('../assets/img/pic_02.png'),
-          name: 'Multiple interaction Methods',
-          u_name: '6DOD Game Controller, Hand Tracking, Virtual Keyboard'
+          name: 'Main Game Engine Support',
+          u_name: 'Unity, Unreal (Coming Soon)'
         }
       ],
       content_center: [
         {
           img: require('../assets/img/pic_03.png'),
-          name: 'Advance Render Mode',
-          u_name: 'FFR, VR Compositor Layers, SinglePassSoon)'
+          name: '3D Spatial Audio',
+          u_name: 'Unity AudioSource Component, Resonance Audio Plugin'
         },
         {
           img: require('../assets/img/pic_04.png'),
-          name: '3D Spatial Audio',
-          u_name: 'Unity AudioSource Component, Resonance Audio Plugin'
+          name: 'Advance Render Mode',
+          u_name: 'FFR, VR Compositor Layers, SinglePassSoon)'
         }
       ],
       content_bottom: [
         {
           img: require('../assets/img/pic_05.png'),
-          name: 'VR Develop Testing Tool',
-          u_name: 'Provide real-time indicator testing tools for developers\' testing applications. Soon)'
+          name: 'Free DLC & Video Hosting Services',
+          u_name: 'Help developers reduce APK size'
         },
         {
           img: require('../assets/img/pic_06.png'),
-          name: 'Free DLC & Video Hosting Services',
-          u_name: 'Help developers reduce APK size'
+          name: 'VR Develop Testing Tool',
+          u_name: 'Provide real-time indicator testing tools for developers\' testing applications.'
         }
       ]
     },

@@ -63,7 +63,7 @@
           <div class="qy_pro_item" v-for="(pro, index) in $t('index_page.reason.content_bottom')" :key="index">
             <div class="qy_reason_imgBox">
               <p class="pro_name">{{pro.name}}</p>
-              <p class="pro_u_name">{{pro.u_name}}</p>
+              <p class="pro_u_name" :class="lan_name=='En'?'': 'en_text'">{{pro.u_name}}</p>
               <img :src="pro.img"/>
             </div>
           </div>
@@ -126,5 +126,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
- @import "../assets/home";
+ @import "../styles/home";
 </style>
