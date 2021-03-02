@@ -13,7 +13,8 @@
       </template>
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
-          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
+          <!--<img :src="avatar" class="user-avatar">-->
+          <img :src="$t('index_page.navBar.account')" class="user-avatar">
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
@@ -63,7 +64,8 @@ export default {
   },
   data(){
     return {
-      tagsShow: this.$store.state.settings.tagsView
+      tagsShow: this.$store.state.settings.tagsView,
+      account: '../../@/assets/img/account.png'
     }
   },
   methods: {

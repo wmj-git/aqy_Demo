@@ -4,13 +4,15 @@
       <app-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
         <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown':!isNest}">
           <item :icon="onlyOneChild.meta.icon||(item.meta&&item.meta.icon)" :title="onlyOneChild.meta.title" />
+          <!--<item :icon="onlyOneChild.meta.icon||(item.meta&&item.meta.icon)" v-for="(_item,index) in $t('main_menu.route')" :key="index" :title="_item[index].title" />-->
         </el-menu-item>
       </app-link>
     </template>
 
     <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
-      <template slot="title">
+      <template slot="title" >
         <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title" />
+        <!--<item v-if="item.meta" :icon="item.meta && item.meta.icon" v-for="(items,index) in $t('main_menu.route')" :key="index"  :title="items.title" />-->
       </template>
       <sidebar-item
         v-for="child in item.children"

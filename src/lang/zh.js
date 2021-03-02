@@ -4,6 +4,9 @@ module.exports = {
       nav_list: ['开发文档', '发布管理', '我的账号'],
       logo: require('../assets/img/logo.png')
     },
+    navBar: {
+      account: require('../assets/img/account.png')
+    },
     banner: {
       title: '奇遇开发者平台',
       sub_title: '专注优质VR/AR应用游戏的开发和运营',
@@ -155,12 +158,35 @@ module.exports = {
     logo: {
       img: require('../assets/img/logo.png')
     },
-    login_btn_text: ['登录', '申请成为开发者']
+    login_btn_text: ['登录', '申请成为开发者'],
+    register: {
+      title: '注册',
+      content: '加入奇遇开发者需要先填写相关资料，待商务审核通过后，分配账号信息。',
+      btn_text: '联系商务人员'
+    }
   },
   main_menu: {
     sideBar: {
       logo_icon: require('../assets/img/logo_icon.png'),
       logo: require('../assets/img/logo.png')
-    }
+    },
+    route: [
+      {
+        title: '首页',
+        children: [
+          {
+            title: '我的账户'
+          },
+          {
+            title: '应用管理',
+            children: [
+              {
+                title: '应用列表'
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

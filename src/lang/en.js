@@ -4,6 +4,9 @@ module.exports = {
       nav_list: ['Develop', 'Distribute', 'Account'],
       logo: require('../assets/img/logo_en.png')
     },
+    navBar: {
+      account: require('../assets/img/account.png')
+    },
     banner: {
       title: 'QIYU XR Platfrom',
       sub_title: 'Focus on the high-quality VR/AR application',
@@ -111,7 +114,7 @@ module.exports = {
       ],
       footer_item_another: [
         {
-          title: '联系我们',
+          title: 'Contact Us',
           footer_nav: [
             'Business Cooperation:columbus@qiyi.com', 'Recruitment：', 'Company Address：China Beijing Haidian North First Street 4 IQiyi Innovation Building'
           ],
@@ -155,12 +158,35 @@ module.exports = {
     logo: {
       img: require('../assets/img/logo_en.png')
     },
-    login_btn_text: ['Login', 'Developer application']
+    login_btn_text: ['Login', 'Developer application'],
+    register: {
+      title: 'Register',
+      content: '加入奇遇开发者需要先填写相关资料，待商务审核通过后，分配账号信息。',
+      btn_text: '联系商务人员'
+    }
   },
   main_menu: {
     sideBar: {
       logo_icon: require('../assets/img/logo_icon.png'),
       logo: require('../assets/img/logo_en.png')
-    }
+    },
+    route: [
+      {
+        title: 'Home page',
+        children: [
+          {
+            title: 'My account'
+          },
+          {
+            title: 'Application management',
+            children: [
+              {
+                title: 'Management list'
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

@@ -236,10 +236,15 @@
             }
             &:last-child {
               .qy_reason_imgBox .pro_u_name {
-                padding-bottom: 55px;
+                margin-bottom: 55px;
                 &.en_text{
                   max-width: 528px;
-                  letter-spacing: -1px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 1;
+                  -webkit-box-orient: vertical;
+                  word-break: break-all;
                   line-height: 16px;
                 }
               }

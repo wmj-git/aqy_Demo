@@ -67,6 +67,12 @@
         </el-button>
       </el-form>
     </div>
+    <el-dialog  class="register_dialog" :title="$t('login_page.register.title')" :visible.sync="dialogTableVisible" custom-class="role-mask">
+      <p>{{ $t('login_page.register.content')}}</p>
+      <div slot="footer" class="dialog-footer">
+        <el-button class="register_btn" @click="dialogTableVisible = false">{{$t('login_page.register.btn_text')}}</el-button>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
@@ -101,6 +107,7 @@
         }
       }
       return {
+        dialogTableVisible: false,
         isRemember: true,
         activeIndex: 0,
         current_lan: '',
@@ -130,6 +137,7 @@
     mounted(){
       this.current_lan = this.$i18n.locale;
       console.log("当前语言", this.current_lan);
+      console.log('测试', [+[]][+[]])
     },
     methods: {
       handleLogin(index) {
@@ -158,6 +166,7 @@
             }
           })
         } else {
+          this.dialogTableVisible = true;
           console.log('申请成为开发者')
         }
       },
