@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: 'Vue Admin Template',
+  title: '爱奇艺官网',
 
   /**
    * @type {boolean} true | false

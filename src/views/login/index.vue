@@ -107,7 +107,7 @@
         loginForm: {
           username: '',
           password: '',
-          code: ''
+          code: '',
         },
         loginRules: {
           username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -128,7 +128,6 @@
       }
     },
     mounted(){
-      console.log("吃美食城马上凑")
       this.current_lan = this.$i18n.locale;
       console.log("当前语言", this.current_lan);
     },
