@@ -3,8 +3,12 @@
     <template v-if="hasOneShowingChild(item.children,item) && (!onlyOneChild.children||onlyOneChild.noShowingChildren)&&!item.alwaysShow">
       <app-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
         <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown':!isNest}">
-          <item :icon="onlyOneChild.meta.icon||(item.meta&&item.meta.icon)" :title="onlyOneChild.meta.title" />
-          <!--<item :icon="onlyOneChild.meta.icon||(item.meta&&item.meta.icon)" v-for="(_item,index) in $t('main_menu.route')" :key="index" :title="_item[index].title" />-->
+          <item :icon="onlyOneChild.meta.icon||(item.meta&&item.meta.icon)" :title="onlyOneChild.meta.title"/>
+        <!--  <div v-for="(_item,_index) in $t('main_menu.route')" :key="_index" >
+            <item :icon="onlyOneChild.meta.icon||(item.meta&&item.meta.icon)" v-for="(item,index) in _item[0].children" :key="index" :title="item.title" />
+          </div>-->
+          <!--<item :icon="onlyOneChild.meta.icon||(item.meta&&item.meta.icon)" :title="$t('main_menu.route[0].children[0].title')" />-->
+
         </el-menu-item>
       </app-link>
     </template>
@@ -12,7 +16,8 @@
     <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
       <template slot="title" >
         <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title" />
-        <!--<item v-if="item.meta" :icon="item.meta && item.meta.icon" v-for="(items,index) in $t('main_menu.route')" :key="index"  :title="items.title" />-->
+
+        <!--<item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="$t('main_menu.route[0].children[1].title')" />-->
       </template>
       <sidebar-item
         v-for="child in item.children"
@@ -66,6 +71,7 @@ export default {
         } else {
           // Temp set(will be used if only has one showing child)
           this.onlyOneChild = item
+          console.log('this.onlyOneChild', this.onlyOneChild)
           return true
         }
       })

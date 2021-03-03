@@ -1,6 +1,12 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-text">name: {{ name }}</div>
+  <!--  <div>
+      <div v-for="(_item,_index) in $t('main_menu.route')" :key="_index" >
+        {{_item.children}}
+        <p v-for="(item,index) in _item.children" :key="index" :title="item.title" >{{item.title}}</p>
+      </div>
+    </div>-->
   </div>
 </template>
 

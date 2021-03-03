@@ -61,8 +61,9 @@
           </div>
 
         </el-form-item>
-        <el-button v-for="(item, index) in $t('login_page.login_btn_text')" class="operate_btn"
+        <el-button v-for="(item, index) in $t('login_page.login_btn_text')" :key = "index" class="operate_btn"
                    :class="activeIndex == index ? 'active':''"
+                   @mouseenter.native.prevent="addActive($event,index)" @mouseout.native.prevent="removeActive($event,index)"
                    @click.native.prevent="handleLogin(index)">{{ item}}
         </el-button>
       </el-form>
@@ -137,7 +138,6 @@
     mounted(){
       this.current_lan = this.$i18n.locale;
       console.log("当前语言", this.current_lan);
-      console.log('测试', [+[]][+[]])
     },
     methods: {
       handleLogin(index) {
@@ -205,6 +205,16 @@
           }
         }
         return ''
+      },
+      addActive($event,index){
+        this.activeIndex = index;
+        $event.currentTarget.className = 'el-button operate_btn el-button--default active'
+      },
+      removeActive($event,index){
+        $event.currentTarget.className = 'el-button operate_btn el-button--default'
+        if(this.activeIndex == index){
+          $event.currentTarget.className = 'el-button operate_btn el-button--default active'
+        }
       }
     },
     created() {

@@ -25,7 +25,7 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
+    redirect: '',
     meta: { title: '首页', icon: 'dashboard', affix: false },
     children: [
       {
@@ -38,7 +38,7 @@ export const constantRoutes = [
         path: 'account',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
-        meta: { title: '应用管理', icon: 'table' },
+        meta: { title: '应用管理', icon: 'table', affix: false },
         alwaysShow: true,
         children: [
           {
