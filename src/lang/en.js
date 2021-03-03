@@ -170,23 +170,11 @@ module.exports = {
       logo_icon: require('../assets/img/logo_icon.png'),
       logo: require('../assets/img/logo_en.png')
     },
-    route: [
-      {
-        title: 'Home page',
-        children: [
-          {
-            title: 'My account'
-          },
-          {
-            title: 'Application management',
-            children: [
-              {
-                title: 'Management list'
-              }
-            ]
-          }
-        ]
-      }
-    ]
+    route: {
+      home_page: 'Home page',
+      account: 'My account',
+      application: 'Application management',
+      application_list: 'Management list'
+    }
   }
 }
