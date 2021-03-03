@@ -36,7 +36,7 @@
             @keyup.enter.native="handleLogin"
           />
         </el-form-item>
-        <!-- <el-form-item prop="code" class="form_item">
+         <el-form-item prop="code" class="form_item">
          <span class="svg-container">
            <svg-icon icon-class="code"/>
          </span>
@@ -50,7 +50,7 @@
              tabindex="3"
              auto-complete="on"
            />
-         </el-form-item>-->
+         </el-form-item>
         <el-form-item class="form_item">
           <div class="flex_layout" :class="current_lan=='en' ? 'en_flex': ''">
             <p class="check">
@@ -101,7 +101,7 @@
         }
       }
       const validateCode = (rule, value, callback) => {
-        if (value.length < 6) {
+        if (value.length < 3) {
           callback(new Error(this.$t('login_page.error_message.code')))
         } else {
           callback()
@@ -152,10 +152,12 @@
                 if (this.isRemember) {
                   this.setCookie('user', this.loginForm.username, 30)
                   const pwd = Base64.encode(this.loginForm.password)
-                  this.setCookie('pwd', pwd, 30)
+                  this.setCookie('pwd', pwd, 30);
+                  this.setCookie('code', this.loginForm.code, 30)
                 } else {
-                  this.setCookie('user', '', 30)
+                  this.setCookie('user', '', 0)
                   this.setCookie('pwd', '', 0)
+                  this.setCookie('code', '', 0)
                 }
               }).catch(() => {
                 this.loading = false
@@ -172,6 +174,7 @@
       },
       isCheck() {
         this.isRemember = event.target.checked
+        console.log('记住', this.isRemember);
       },
       initForm() {
         const username = this.getCookie('user')

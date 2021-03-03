@@ -23,7 +23,7 @@ export const constantRoutes = [
     hidden: true
   },
   {
-    path: '/',
+    path: '/account',
     component: Layout,
     redirect: '',
     meta: { title: '首页', icon: 'dashboard', affix: false },
@@ -33,19 +33,25 @@ export const constantRoutes = [
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
         meta: { title: '我的账户', icon: 'dashboard', affix: true }
-      },
+      }]
+  },
+  {
+    path: '/application',
+    component: Layout,
+    redirect: '',
+    meta: { title: '应用管理', icon: 'dashboard', affix: false },
+    children: [
       {
-        path: 'account',
+        path: 'application-list',
         component: () => import('@/views/dashboard/index'),
-        name: 'Dashboard',
-        meta: { title: '应用管理', icon: 'table', affix: false },
-        alwaysShow: true,
+        name: 'dashboard',
+        meta: { title: '应用管理', icon: 'table' },
         children: [
           {
             path: 'application-list',
             component: () => import('@/views/dashboard/index'),
             name: 'dashboard',
-            meta: { title: '应用列表', icon: 'table' }
+            meta: { title: '应用管理', icon: 'table' }
           }
         ]
       }
