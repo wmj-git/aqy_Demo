@@ -25,8 +25,10 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '',
     name: 'main_menu.route.home_page',
+    redirect: '/index', // 重定向地址，在面包屑中点击会重定向去的地址
+    // hidden: false, // 不在侧边栏显示
+    // alwaysShow: true, // 一直显示根路由
     meta: { title: 'main_menu.route.home_page', icon: 'dashboard', affix: false },
     children: [
       {
@@ -37,9 +39,9 @@ export const constantRoutes = [
       }]
   },
   {
-    path: '/',
+    path: '/use',
     component: Layout,
-    redirect: '',
+    redirect: '/use/application',
     meta: { title: 'main_menu.route.application', icon: 'dashboard', affix: false },
     children: [
       {
@@ -63,7 +65,7 @@ export const constantRoutes = [
 
 const createRouter = () => new Router({
   scrollBehavior: () => ({ y: 0 }),
-  // mode: 'history', // 去掉#
+  mode: 'history', // 去掉#
   routes: constantRoutes
 })
 
