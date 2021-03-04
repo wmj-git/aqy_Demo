@@ -37,16 +37,16 @@ export const constantRoutes = [
       }]
   },
   {
-    path: '/application',
+    path: '/',
     component: Layout,
     redirect: '',
     meta: { title: 'main_menu.route.application', icon: 'dashboard', affix: false },
     children: [
       {
-        path: 'application-list',
+        path: 'application',
         component: () => import('@/views/dashboard/index'),
         name: 'dashboard',
-        meta: { title: 'main_menu.route.application', icon: 'table' },
+        meta: { title: '', icon: 'table' },
         children: [
           {
             path: 'application-list',
