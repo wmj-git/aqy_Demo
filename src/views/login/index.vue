@@ -135,11 +135,29 @@
         immediate: true
       }
     },
+    created() {
+      let that = this;
+      document.onkeypress = function(e) {
+        var keycode = document.all ? event.keyCode : e.which;
+        if (keycode == 13) {
+          console.log('12')
+          that.handleLogin();
+          return false;
+        }
+      };
+    },
     mounted(){
       this.current_lan = this.$i18n.locale;
-      console.log("当前语言", this.current_lan);
+      //绑定事件
+      window.addEventListener('keydown',this.keyDown);
     },
     methods: {
+      keyDown(e){
+        //如果是回车则执行登录方法
+        if(e.keyCode == 13){
+          this.handleLogin(0);
+        }
+      },
       handleLogin(index) {
         this.activeIndex = index
         if (index == 0) {
@@ -222,6 +240,9 @@
     },
     created() {
       this.initForm()
+    },
+    destroyed(){
+      window.removeEventListener('keydown',this.keyDown,false);
     }
   }
 </script>
