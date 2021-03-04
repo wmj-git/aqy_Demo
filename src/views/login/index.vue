@@ -115,7 +115,7 @@
         loginForm: {
           username: '',
           password: '',
-          code: '',
+          code: '123',
         },
         loginRules: {
           username: [{ required: true, trigger: 'blur', validator: validateUsername }],

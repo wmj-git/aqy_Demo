@@ -63,7 +63,7 @@ export const constantRoutes = [
 
 const createRouter = () => new Router({
   scrollBehavior: () => ({ y: 0 }),
-  mode: 'history', // 去掉#
+  // mode: 'history', // 去掉#
   routes: constantRoutes
 })
 

@@ -175,6 +175,9 @@ module.exports = {
       account: 'My account',
       application: 'Application management',
       application_list: 'Management list'
+    },
+    user: {
+      name: 'Current user: Zhang San'
     }
   }
 }

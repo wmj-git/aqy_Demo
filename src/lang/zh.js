@@ -175,6 +175,9 @@ module.exports = {
       account: '我的账户',
       application: '应用管理',
       application_list: '管理列表'
+    },
+    user: {
+      name: '当前用户：张三'
     }
   }
 }
