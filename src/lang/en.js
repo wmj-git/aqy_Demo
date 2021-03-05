@@ -83,42 +83,128 @@ module.exports = {
       footer_item: [
         {
           title: 'Product',
+          url: 'http://www.baidu.com',
           footer_nav: [
-            'QIYU 3', 'QIYU 2Pro', 'QIYU 2S', 'QIYU 2', '2S', 'QIYU OS', 'QIYU AR Glass'
+            {
+              title: 'QIYU 3',
+              url: ''
+            },
+            {
+              title: 'QIYU 2Pro',
+              url: ''
+            },
+            {
+              title: 'QIYU 2S',
+              url: ''
+            },
+            {
+              title: 'QIYU 2',
+              url: ''
+            },
+            {
+              title: '2S',
+              url: ''
+            },
+            {
+              title: 'QIYU AR Glass',
+              url: ''
+            }
           ]
         },
         {
           title: 'Content',
+          url: '',
           footer_nav: [
-            'Apps And Games', 'Viideo'
+            {
+              title: 'PartyGame',
+              url: ''
+            },
+            {
+              title: 'Playground',
+              url: ''
+            },
+            {
+              title: 'Cinema',
+              url: ''
+            },
+            {
+              title: 'QIYU VIP',
+              url: ''
+            },
+            {
+              title: 'QIYU OS 5.0',
+              url: ''
+            }
           ]
         },
         {
           title: 'Corporate Services',
+          url: '',
           footer_nav: [
-            'Hotel Business', 'Education Industry'
+            {
+              title: 'Hotel Business',
+              url: ''
+            },
+            {
+              title: 'Education Industry',
+              url: ''
+            }
           ]
         },
         {
           title: 'About QIYU',
+          url: '',
           footer_nav: [
-            'Company Profile ', 'News', 'Career Opportunities'
+            {
+              title: 'Company Profile ',
+              url: ''
+            },
+            {
+              title: 'News',
+              url: ''
+            },
+            {
+              title: 'Career Opportunities',
+              url: ''
+            }
           ]
         },
         {
           title: 'More',
+          url: '',
           footer_nav: [
-            'Developer Platform', 'Industry Solution'
+            {
+              title: 'Developer Platform',
+              url: ''
+            },
+            {
+              title: 'Industry Solution',
+              url: ''
+            }
           ]
         }
       ],
       footer_item_another: [
         {
           title: 'Contact Us',
+          url: '',
           footer_nav: [
-            'Business Cooperation:columbus@qiyi.com', 'Recruitment：', 'Company Address：China Beijing Haidian North First Street 4 IQiyi Innovation Building'
+            {
+              title: 'Business Cooperation:columbus@qiyi.com',
+              url: ''
+            },
+            {
+              title: 'Recruitment：'
+            },
+            {
+              title: 'Company Address：China Beijing Haidian North First Street 4 IQiyi Innovation Building',
+              url: ''
+            }
           ],
-          footer_link: 'Check the position >>'
+          footer_link: {
+            title: 'Check the position >>',
+            url: 'http://www.jd.com'
+          }
         },
         {
           title: 'National customer hotline : 400-923-7171 Ext. 5',
@@ -137,7 +223,10 @@ module.exports = {
           ]
         }
       ],
-      footer_status: 'Copyright © 2020爱奇艺智能All Rights Reserved 渝ICP备18002599号'
+      footer_status: {
+        title: 'Copyright © 2020爱奇艺智能All Rights Reserved 渝ICP备18002599号',
+        url: 'https://beian.miit.gov.cn/'
+      }
     }
   },
   login_page: {

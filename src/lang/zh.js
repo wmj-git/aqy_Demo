@@ -83,42 +83,128 @@ module.exports = {
       footer_item: [
         {
           title: '奇遇产品',
+          url: 'http://www.baidu.com',
           footer_nav: [
-            '奇遇3', '奇遇2Pro', '奇遇2S', '奇遇2', '奇遇AR Glass', '奇遇VR助手'
+            {
+              title: '奇遇3',
+              url: 'http://www.taobao.com'
+            },
+            {
+              title: '奇遇2Pro',
+              url: ''
+            },
+            {
+              title: '奇遇2S',
+              url: ''
+            },
+            {
+              title: '奇遇2',
+              url: ''
+            },
+            {
+              title: '奇遇AR Glass',
+              url: ''
+            },
+            {
+              title: '奇遇VR助手',
+              url: ''
+            }
           ]
         },
         {
           title: '内容',
+          url: '',
           footer_nav: [
-            '奇遇派对', '娱乐场', '未来影院', '奇遇会员', '奇遇OS 5.0'
+            {
+              title: '奇遇派对',
+              url: ''
+            },
+            {
+              title: '娱乐场',
+              url: ''
+            },
+            {
+              title: '未来影院',
+              url: ''
+            },
+            {
+              title: '奇遇会员',
+              url: ''
+            },
+            {
+              title: '奇遇OS 5.0',
+              url: ''
+            }
           ]
         },
         {
           title: '购买渠道',
+          url: '',
           footer_nav: [
-            '京东旗舰店', '天猫旗舰店'
+            {
+              title: '京东旗舰店',
+              url: ''
+            },
+            {
+              title: '天猫旗舰店',
+              url: ''
+            }
           ]
         },
         {
           title: '了解奇遇',
+          url: '',
           footer_nav: [
-            '公司简介', '企业服务', '新闻动态'
+            {
+              title: '公司简介',
+              url: ''
+            },
+            {
+              title: '企业服务',
+              url: ''
+            },
+            {
+              title: '新闻动态',
+              url: ''
+            }
           ]
         },
         {
           title: '更多',
+          url: '',
           footer_nav: [
-            '开发者平台', '帮助中心'
+            {
+              title: '开发者平台',
+              url: ''
+            },
+            {
+              title: '帮助中心',
+              url: ''
+            }
           ]
         }
       ],
       footer_item_another: [
         {
           title: '联系我们',
+          url: '',
           footer_nav: [
-            '商务合作：columbus@qiyi.com', '人才招聘：', '公司地址：中国北京市海淀区海淀北一街4号爱奇艺创新大厦'
+            {
+              title: '商务合作：columbus@qiyi.com',
+              url: ''
+            },
+            {
+              title: '人才招聘：'
+            },
+            {
+              title: '公司地址：中国北京市海淀区海淀北一街4号爱奇艺创新大厦',
+              url: ''
+            }
           ],
-          footer_link: '查看职位>>'
+          footer_link: {
+            title: '查看职位>>',
+            url: 'http://www.jd.com'
+          }
         },
         {
           title: '全国客服热线：400-923-7171转5',
@@ -137,7 +223,10 @@ module.exports = {
           ]
         }
       ],
-      footer_status: 'Copyright © 2020爱奇艺智能All Rights Reserved 渝ICP备18002599号'
+      footer_status: {
+        title: 'Copyright © 2020爱奇艺智能All Rights Reserved 渝ICP备18002599号',
+        url: 'https://beian.miit.gov.cn/'
+      }
     }
   },
   login_page: {

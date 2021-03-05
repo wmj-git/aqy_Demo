@@ -33,14 +33,19 @@
           }
         }
       }
-      & .flex_nav li {
-        color: #333333;
-        font-size: 16px;
-        float: left;
-        padding: 0 5vw;
-        &:hover, &.active{
-          cursor: pointer;
-          color: #00BF6C;
+      & .flex_nav {
+        transform: translateX(-30px);
+        & li {
+          color: #333333;
+          font-size: 16px;
+          float: left;
+          &:nth-child(2){
+            padding: 0 80px;
+          }
+          &:hover, &.active{
+            cursor: pointer;
+            color: #00BF6C;
+          }
         }
       }
     }
@@ -49,12 +54,17 @@
     max-width: 1920px;
     margin: 0 auto;
     height: 700px;
-    background: url("../assets/img/banner.png") no-repeat center;
+    background: url("../assets/img/banner.jpg") no-repeat center;
     background-size: cover;
+    &.banner_en{
+      & .banner_content {
+        transform: translate(-360px, 265px);
+      }
+    }
     & .banner_content {
       float: right;
       text-align: left;
-      transform: translate(-360px, 265px);
+      transform: translate(-510px, 265px);
       & .banner_title {
         color: #EFF3F6;
       }
@@ -321,6 +331,9 @@
           font-weight: 500;
           color: #D1D1D1;
           line-height: 24px;
+          &:hover{
+            color: #fff;
+          }
           & span.concat_en{
             width: 214px;
             text-align: center;
@@ -356,7 +369,24 @@
     }
   }
 }
-
+@media screen and(min-width: 1366px) and (max-width: 1679px){
+  .container{
+    & .index_banner {
+      & .banner_content {
+        transform: translate(-292px, 265px) !important;
+      }
+    }
+  }
+}
+@media screen and(min-width: 1680px) and (max-width: 1919px){
+  .container{
+    & .index_banner {
+      & .banner_content {
+        transform: translate(-437px, 265px) !important;
+      }
+    }
+  }
+}
 @media screen and (max-width: 1920px){
   .container{
     & .layout_flex{
@@ -370,8 +400,13 @@
       }
     }
     & .index_banner{
+      &.banner_en{
+        & .banner_content{
+          transform: translate(-40px, 265px);
+        }
+      }
       & .banner_content{
-        transform: translate(-40px, 265px);
+        transform: translate(-154px, 265px);
       }
     }
     & .qy_pro {
