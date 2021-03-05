@@ -95,10 +95,10 @@
         <p class="qy_footer_status">
           <a :href="$t('index_page.footerList.footer_status.url')" >{{$t('index_page.footerList.footer_status.title')}}</a></p>
       </div>
-      <el-dialog  class="register_dialog" :title="$t('login_page.register.title')" :visible.sync="dialogTableVisible" custom-class="role-mask">
-        <p>{{ $t('login_page.register.content')}}</p>
+      <el-dialog  class="register_dialog" :title="$t('index_page.banner.register_dialog.title')" :visible.sync="dialogTableVisible" custom-class="role-mask">
+        <p>{{ $t('index_page.banner.register_dialog.content')}}</p>
         <div slot="footer" class="dialog-footer">
-          <el-button class="register_btn" @click="dialogTableVisible = false">{{$t('login_page.register.btn_text')}}</el-button>
+          <a :href="$t('index_page.banner.register_dialog.url')" @click="dialogTableVisible = false">{{$t('index_page.banner.register_dialog.link')}}</a>
         </div>
       </el-dialog>
     </div>

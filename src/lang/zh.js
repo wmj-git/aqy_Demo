@@ -10,7 +10,13 @@ module.exports = {
     banner: {
       title: '奇遇开发者平台',
       sub_title: '专注优质VR/AR应用游戏的开发和运营',
-      btn_text: '申请成为开发者'
+      btn_text: '申请成为开发者',
+      register_dialog: {
+        title: '申请加入开发者',
+        content: '奇遇开发者注册采取邀请制，请先填写资料发送至developer_smart@qiyi.com，商务人员将会在1~5个工作日与您联系并分配账号信息。',
+        link: '下载资料模板>',
+        url: ''
+      }
     },
     product: {
       title: '奇遇VR产品',

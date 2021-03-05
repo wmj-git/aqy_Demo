@@ -401,6 +401,14 @@
     font-size: 18px;
     border: none;
   }
+  & .dialog-footer{
+    text-align: left;
+    padding: 0 40px;
+    color: #0ddb8d;
+    &:hover{
+      color: #00BF6C;
+    }
+  }
 }
 
 @media screen and(min-width: 1366px) and (max-width: 1679px) {

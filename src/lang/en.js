@@ -10,7 +10,13 @@ module.exports = {
     banner: {
       title: 'QIYU XR Platfrom',
       sub_title: 'Focus on the high-quality VR/AR application',
-      btn_text: 'Apply to QIYU developer'
+      btn_text: 'Apply to QIYU developer',
+      register_dialog: {
+        title: '申请加入开发者',
+        content: '奇遇开发者注册采取邀请制，请先填写资料发送至developer_smart@qiyi.com，商务人员将会在1~5个工作日与您联系并分配账号信息。',
+        link: '下载资料模板>',
+        url: ''
+      }
     },
     product: {
       title: 'QIYU VR Headset',
