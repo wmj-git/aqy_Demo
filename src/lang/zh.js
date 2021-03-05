@@ -91,7 +91,6 @@ module.exports = {
       footer_item: [
         {
           title: '奇遇产品',
-          url: 'http://www.baidu.com',
           footer_nav: [
             {
               title: '奇遇3',
@@ -121,7 +120,6 @@ module.exports = {
         },
         {
           title: '内容',
-          url: '',
           footer_nav: [
             {
               title: '奇遇派对',
@@ -147,7 +145,6 @@ module.exports = {
         },
         {
           title: '购买渠道',
-          url: '',
           footer_nav: [
             {
               title: '京东旗舰店',
@@ -161,7 +158,6 @@ module.exports = {
         },
         {
           title: '了解奇遇',
-          url: '',
           footer_nav: [
             {
               title: '公司简介',
@@ -179,7 +175,6 @@ module.exports = {
         },
         {
           title: '更多',
-          url: '',
           footer_nav: [
             {
               title: '开发者平台',
@@ -195,18 +190,17 @@ module.exports = {
       footer_item_another: [
         {
           title: '联系我们',
-          url: '',
           footer_nav: [
             {
-              title: '商务合作：columbus@qiyi.com',
+              title: '商务合作：',
+              email: 'columbus@qiyi.com',
               url: ''
             },
             {
               title: '人才招聘：'
             },
             {
-              title: '公司地址：中国北京市海淀区海淀北一街4号爱奇艺创新大厦',
-              url: ''
+              title: '公司地址：中国北京市海淀区海淀北一街4号爱奇艺创新大厦'
             }
           ],
           footer_link: {

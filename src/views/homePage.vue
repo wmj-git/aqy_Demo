@@ -12,6 +12,7 @@
         </div>
       </div>
       <div class="index_banner" :class="[current_language=='en'?'banner_en':'']">
+        <img class="banner_img" src="@/assets/img/banner.png"/>
         <div class="banner_content">
           <p class="banner_title title">{{$t('index_page.banner.title')}}</p>
           <p class="banner_sub_title sub_title">{{$t('index_page.banner.sub_title')}}</p>
@@ -72,7 +73,7 @@
       <div class="qy_footer_box">
         <div class="footer_content">
           <div class="footer_nav footer_top_nav" v-for="(items, index) in $t('index_page.footerList.footer_item')" :key="index">
-            <p class="qy_footer_nav_item"><a :href="items.url">{{items.title}}</a></p>
+            <p class="qy_footer_nav_item">{{items.title}}</p>
             <ul class="qy_footer">
               <li v-for="(item, index) in items.footer_nav" :key="index">
                 <a :href="item.url">{{item.title}}</a></li>
@@ -81,14 +82,14 @@
         </div>
         <div class="footer_content">
           <div class="footer_nav footer_bottom_nav" v-for="(items, index) in $t('index_page.footerList.footer_item_another')" :key="index">
-            <p class="qy_footer_nav_item"><img :src="items.icon"/><span :class="[current_language == 'en'?'concat_en': '']"><a :href="items.url">{{items.title}}</a></span></p>
+            <p class="qy_footer_nav_item" :class="[current_language == 'en'?'concat_en': 'concat_zh']"><img :src="items.icon"/><span>{{items.title}}</span></p>
             <div class="img_code" v-for="(ite, idx) in items.code" :key="idx">
               <img :src="ite.icon"/>
               <p class="padding_bottom">{{ite.text}}</p>
               <p>{{ite.text_name}}</p>
             </div>
             <ul class="qy_footer">
-              <li v-for="(item, index) in items.footer_nav" :key="index"><a :href="item.url">{{item.title}}</a><span class="footer_link" v-if="link_index == index"><a :href="items.footer_link.url">{{items.footer_link.title}}</a></span></li>
+              <li v-for="(item, index) in items.footer_nav" :key="index">{{item.title}}<a :href="item.url">{{item.email}}</a><span class="footer_link" v-if="link_index == index"><a :href="items.footer_link.url">{{items.footer_link.title}}</a></span></li>
             </ul>
           </div>
         </div>

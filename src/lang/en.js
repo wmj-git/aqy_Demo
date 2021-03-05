@@ -91,7 +91,6 @@ module.exports = {
       footer_item: [
         {
           title: 'Product',
-          url: 'http://www.baidu.com',
           footer_nav: [
             {
               title: 'QIYU 3',
@@ -121,7 +120,6 @@ module.exports = {
         },
         {
           title: 'Content',
-          url: '',
           footer_nav: [
             {
               title: 'PartyGame',
@@ -147,7 +145,6 @@ module.exports = {
         },
         {
           title: 'Corporate Services',
-          url: '',
           footer_nav: [
             {
               title: 'Hotel Business',
@@ -161,7 +158,6 @@ module.exports = {
         },
         {
           title: 'About QIYU',
-          url: '',
           footer_nav: [
             {
               title: 'Company Profile ',
@@ -195,18 +191,17 @@ module.exports = {
       footer_item_another: [
         {
           title: 'Contact Us',
-          url: '',
           footer_nav: [
             {
-              title: 'Business Cooperation:columbus@qiyi.com',
+              title: 'Business Cooperation：',
+              email: 'columbus@qiyi.com',
               url: ''
             },
             {
               title: 'Recruitment：'
             },
             {
-              title: 'Company Address：China Beijing Haidian North First Street 4 IQiyi Innovation Building',
-              url: ''
+              title: 'Company Address：China Beijing Haidian North First Street 4 IQiyi Innovation Building'
             }
           ],
           footer_link: {

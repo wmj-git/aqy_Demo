@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '爱奇艺官网',
+  title: '奇遇开发者平台',
 
   /**
    * @type {boolean} true | false
