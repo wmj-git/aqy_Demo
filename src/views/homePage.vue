@@ -16,7 +16,7 @@
           <p class="banner_title title">{{$t('index_page.banner.title')}}</p>
           <p class="banner_sub_title sub_title">{{$t('index_page.banner.sub_title')}}</p>
           <div class="banner_btn_box" :class="[current_language=='en'?'banner_btn_en':'']">
-            <button class="banner_btn"><img src="../assets/img/icon_apply.png"/><span>{{$t('index_page.banner.btn_text')}}</span></button>
+            <button class="banner_btn" @click="register()"><img src="../assets/img/icon_apply.png"/><span>{{$t('index_page.banner.btn_text')}}</span></button>
           </div>
         </div>
       </div>
@@ -95,12 +95,19 @@
         <p class="qy_footer_status">
           <a :href="$t('index_page.footerList.footer_status.url')" >{{$t('index_page.footerList.footer_status.title')}}</a></p>
       </div>
+      <el-dialog  class="register_dialog" :title="$t('login_page.register.title')" :visible.sync="dialogTableVisible" custom-class="role-mask">
+        <p>{{ $t('login_page.register.content')}}</p>
+        <div slot="footer" class="dialog-footer">
+          <el-button class="register_btn" @click="dialogTableVisible = false">{{$t('login_page.register.btn_text')}}</el-button>
+        </div>
+      </el-dialog>
     </div>
 </template>
 <script>
 export default {
   data () {
     return {
+      dialogTableVisible: false,
       activeClass: 0,
       link_index: 1,
       current_language: '',
@@ -120,6 +127,9 @@ export default {
     },
     clickActive (index) {
       this.activeClass = index
+    },
+    register(){
+      this.dialogTableVisible = true;
     }
   },
   updated () {
