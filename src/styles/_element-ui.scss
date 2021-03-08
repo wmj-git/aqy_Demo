@@ -47,3 +47,8 @@
 .el-range-separator {
   box-sizing: content-box;
 }
+.is-required .el-form-item__content{
+  line-height: unset;
+  display: flex;
+  align-items: center;
+}

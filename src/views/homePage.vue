@@ -12,7 +12,6 @@
         </div>
       </div>
       <div class="index_banner" :class="[current_language=='en'?'banner_en':'']">
-        <img class="banner_img" src="@/assets/img/banner.png"/>
         <div class="banner_content">
           <p class="banner_title title">{{$t('index_page.banner.title')}}</p>
           <p class="banner_sub_title sub_title">{{$t('index_page.banner.sub_title')}}</p>

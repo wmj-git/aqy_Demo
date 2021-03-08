@@ -9,7 +9,7 @@
                label-position="left">
         <el-form-item prop="username" class="form_item">
         <span class="svg-container">
-          <svg-icon icon-class="user"/>
+          <img src="@/assets/img/icon_user.png"/>
         </span>
           <input
             ref="username"
@@ -18,11 +18,12 @@
             name="username"
             type="text"
             tabindex="1"
-            auto-complete="on"/>
+            auto-complete="on"
+           />
         </el-form-item>
         <el-form-item prop="password" class="form_item">
         <span class="svg-container">
-          <svg-icon icon-class="password"/>
+                    <img src="@/assets/img/icon_password.png"/>
         </span>
           <input
             :key="passwordType"
@@ -34,23 +35,24 @@
             tabindex="2"
             auto-complete="on"
             @keyup.enter.native="handleLogin"
+            v-on:blur="passwordValidate($event.target.value)"/>
+        </el-form-item>
+        <el-form-item prop="code" class="form_item">
+         <span class="svg-container">
+                    <img src="@/assets/img/icon_code.png"/>
+         </span>
+          <input
+            class="code"
+            ref="code"
+            v-model="loginForm.code"
+            :placeholder="$t('login_page.placeholder.code')"
+            name="code"
+            type="text"
+            tabindex="3"
+            auto-complete="on"
+            @keydown.native="inputChange($event)"
           />
         </el-form-item>
-         <el-form-item prop="code" class="form_item">
-         <span class="svg-container">
-           <svg-icon icon-class="code"/>
-         </span>
-           <input
-             class="code"
-             ref="code"
-             v-model="loginForm.code"
-             :placeholder="$t('login_page.placeholder.code')"
-             name="code"
-             type="text"
-             tabindex="3"
-             auto-complete="on"
-           />
-         </el-form-item>
         <el-form-item class="form_item">
           <div class="flex_layout" :class="current_lan=='en' ? 'en_flex': ''">
             <p class="check">
@@ -61,17 +63,20 @@
           </div>
 
         </el-form-item>
-        <el-button v-for="(item, index) in $t('login_page.login_btn_text')" :key = "index" class="operate_btn"
+        <el-button v-for="(item, index) in $t('login_page.login_btn_text')" :key="index" class="operate_btn"
                    :class="activeIndex == index ? 'active':''"
-                   @mouseenter.native.prevent="addActive($event,index)" @mouseout.native.prevent="removeActive($event,index)"
+                   @mouseenter.native.prevent="addActive($event,index)"
+                   @mouseout.native.prevent="removeActive($event,index)"
                    @click.native.prevent="handleLogin(index)">{{ item}}
         </el-button>
       </el-form>
     </div>
-    <el-dialog  class="register_dialog" :title="$t('login_page.register.title')" :visible.sync="dialogTableVisible" custom-class="role-mask">
+    <el-dialog class="register_dialog" :title="$t('login_page.register.title')" :visible.sync="dialogTableVisible"
+               custom-class="role-mask">
       <p>{{ $t('login_page.register.content')}}</p>
       <div slot="footer" class="dialog-footer">
-        <el-button class="register_btn" @click="dialogTableVisible = false">{{$t('login_page.register.btn_text')}}</el-button>
+        <el-button class="register_btn" @click="dialogTableVisible = false">{{$t('login_page.register.btn_text')}}
+        </el-button>
       </div>
     </el-dialog>
   </div>
@@ -115,7 +120,7 @@
         loginForm: {
           username: '',
           password: '',
-          code: '123',
+          code: '123'
         },
         loginRules: {
           username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -136,26 +141,26 @@
       }
     },
     created() {
-      let that = this;
-      document.onkeypress = function(e) {
-        var keycode = document.all ? event.keyCode : e.which;
+      let that = this
+      document.onkeypress = function (e) {
+        var keycode = document.all ? event.keyCode : e.which
         if (keycode == 13) {
           console.log('12')
-          that.handleLogin();
-          return false;
+          that.handleLogin()
+          return false
         }
-      };
+      }
     },
-    mounted(){
-      this.current_lan = this.$i18n.locale;
+    mounted() {
+      this.current_lan = this.$i18n.locale
       //绑定事件
-      window.addEventListener('keydown',this.keyDown);
+      window.addEventListener('keydown', this.keyDown)
     },
     methods: {
-      keyDown(e){
+      keyDown(e) {
         //如果是回车则执行登录方法
-        if(e.keyCode == 13){
-          this.handleLogin(0);
+        if (e.keyCode == 13) {
+          this.handleLogin(0)
         }
       },
       handleLogin(index) {
@@ -170,7 +175,7 @@
                 if (this.isRemember) {
                   this.setCookie('user', this.loginForm.username, 30)
                   const pwd = Base64.encode(this.loginForm.password)
-                  this.setCookie('pwd', pwd, 30);
+                  this.setCookie('pwd', pwd, 30)
                   this.setCookie('code', this.loginForm.code, 30)
                 } else {
                   this.setCookie('user', '', 0)
@@ -186,13 +191,13 @@
             }
           })
         } else {
-          this.dialogTableVisible = true;
+          this.dialogTableVisible = true
           console.log('申请成为开发者')
         }
       },
       isCheck() {
         this.isRemember = event.target.checked
-        console.log('记住', this.isRemember);
+        console.log('记住', this.isRemember)
       },
       initForm() {
         const username = this.getCookie('user')
@@ -227,13 +232,13 @@
         }
         return ''
       },
-      addActive($event,index){
-        this.activeIndex = index;
+      addActive($event, index) {
+        this.activeIndex = index
         $event.currentTarget.className = 'el-button operate_btn el-button--default active'
       },
-      removeActive($event,index){
+      removeActive($event, index) {
         $event.currentTarget.className = 'el-button operate_btn el-button--default'
-        if(this.activeIndex == index){
+        if (this.activeIndex == index) {
           $event.currentTarget.className = 'el-button operate_btn el-button--default active'
         }
       }
@@ -241,8 +246,8 @@
     created() {
       this.initForm()
     },
-    destroyed(){
-      window.removeEventListener('keydown',this.keyDown,false);
+    destroyed() {
+      window.removeEventListener('keydown', this.keyDown, false)
     }
   }
 </script>

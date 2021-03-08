@@ -82,7 +82,7 @@ input[type=checkbox] {
     border: 1px solid #C4C4C4FF;
     //修改默认对勾颜色
     color: #C4C4C4FF;
-    width: 16px;
+    width: 17px;
     height: 15px;
     padding-top: 2px;
     display: inline-block;
@@ -92,7 +92,7 @@ input[type=checkbox] {
     border-radius: 3px;
   }
   &:checked::after {
-    content: "\221A";
+    background: url("../assets/img/icon_check.png") no-repeat center;
     font-size: 12px;
   }
 }

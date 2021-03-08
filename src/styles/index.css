@@ -75,6 +75,11 @@
 .el-range-separator {
   box-sizing: content-box; }
 
+.is-required .el-form-item__content {
+  line-height: unset;
+  display: flex;
+  align-items: center; }
+
 #app .main-container {
   min-height: 100%;
   transition: margin-left .28s;
@@ -250,7 +255,7 @@ input[type=checkbox] {
     background-color: #fff;
     border: 1px solid #C4C4C4FF;
     color: #C4C4C4FF;
-    width: 16px;
+    width: 17px;
     height: 15px;
     padding-top: 2px;
     display: inline-block;
@@ -259,7 +264,7 @@ input[type=checkbox] {
     content: ' ';
     border-radius: 3px; }
   input[type=checkbox]:checked::after {
-    content: "\221A";
+    background: url("../assets/img/icon_check.png") no-repeat center;
     font-size: 12px; }
 
 /*表单错误提示信息*/
