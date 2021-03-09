@@ -71,12 +71,16 @@ input[type=checkbox] {
   position: relative;
   width: 0;
   height: 0;
+  top: -5px;
   font-size: 14px;
-  margin-right: 8px;
-
+  margin-right: 28px;
+  -webkit-appearance:none;
+  box-sizing: content-box;
+  padding: 0;
   &::after {
     position: absolute;
-    top: -9px;
+    top: -4px;
+    left: 0;
     //修改默认背景色
     background-color: #fff;
     border: 1px solid #C4C4C4FF;
@@ -86,9 +90,8 @@ input[type=checkbox] {
     height: 15px;
     padding-top: 2px;
     display: inline-block;
-    visibility: visible;
     text-align: center;
-    content: ' ';
+    content: '';
     border-radius: 3px;
   }
   &:checked::after {
@@ -172,4 +175,14 @@ div:focus {
       color: #00BF6C;
     }
   }
+}
+.el-input__inner{
+  padding: 0 15px 0 35px;
+  &:focus{
+    border-color: #00BF6C;
+  }
+}
+
+.el-input.code{
+  width: 170px;
 }

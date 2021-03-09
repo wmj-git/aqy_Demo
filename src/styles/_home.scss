@@ -477,7 +477,7 @@
     & .index_banner {
       &.banner_en {
         & .banner_content {
-          transform: translate(-40px, 265px);
+          transform: translate(-40px, 150px);
         }
       }
       & .banner_content {
@@ -554,8 +554,8 @@
 @media screen and (min-width: 2650px) {
   .container {
     & .index_banner{
-      background: url("../assets/img/banner.png") no-repeat 0 -222px, linear-gradient(to right, #00cdd0, #353cc8);
-      background-size: cover;
+      background: url("../assets/img/banner.png") no-repeat 500px 0, linear-gradient(to right, #00cdd0, #353cc8);
+      background-size: contain;
     }
   }
 }

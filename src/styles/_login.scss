@@ -23,11 +23,7 @@
       & .form_item {
         margin-bottom: 22px;
         & input {
-          width: 272px;
-          color: #666;
-          border: 1px solid #E6E6E6;
-          border-radius: 4px;
-          padding: 9px 5px 9px 40px;
+          color: #f00;
           &:focus {
             outline: 0;
             border-color: #00BF6C;
@@ -37,8 +33,7 @@
             float: left;
           }
           &.remember {
-            width: 15px;
-            padding: 6px;
+            outline: none;
           }
         }
         & label {
@@ -60,6 +55,7 @@
           position: absolute;
           left: 10px;
           color: #E6E6E6;
+          z-index: 1;
           & .svg-icon {
             color: #6E6E73;
             font-size: 18px;

@@ -5,52 +5,37 @@
     </div>
     <div class="login_from_box">
       <img :src="$t('login_page.logo.img')" class="from_logo"/>
-      <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on"
+      <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form"
                label-position="left">
         <el-form-item prop="username" class="form_item">
         <span class="svg-container">
           <img src="@/assets/img/icon_user.png"/>
         </span>
-          <input
-            ref="username"
+          <el-input
             v-model="loginForm.username"
             :placeholder="$t('login_page.placeholder.username')"
-            name="username"
-            type="text"
-            tabindex="1"
-            auto-complete="on"
            />
         </el-form-item>
         <el-form-item prop="password" class="form_item">
         <span class="svg-container">
                     <img src="@/assets/img/icon_password.png"/>
         </span>
-          <input
-            :key="passwordType"
-            ref="password"
+          <el-input
+            type="password"
             v-model="loginForm.password"
-            :type="passwordType"
             :placeholder="$t('login_page.placeholder.pwd')"
-            name="password"
-            tabindex="2"
-            auto-complete="on"
+            maxlength="6"
             @keyup.enter.native="handleLogin"
-            v-on:blur="passwordValidate($event.target.value)"/>
+            />
         </el-form-item>
         <el-form-item prop="code" class="form_item">
          <span class="svg-container">
                     <img src="@/assets/img/icon_code.png"/>
          </span>
-          <input
+          <el-input
             class="code"
-            ref="code"
             v-model="loginForm.code"
             :placeholder="$t('login_page.placeholder.code')"
-            name="code"
-            type="text"
-            tabindex="3"
-            auto-complete="on"
-            @keydown.native="inputChange($event)"
           />
         </el-form-item>
         <el-form-item class="form_item">
@@ -86,16 +71,19 @@
   import { validUsername } from '@/utils/validate'
   import Index from '../../components/common/table/index'
   import { Base64 } from 'js-base64'
-
   export default {
     name: 'Login',
     components: { Index },
     data() {
       const validateUsername = (rule, value, callback) => {
-        if (!validUsername(value)) {
-          callback(new Error(this.$t('login_page.error_message.username')))
-        } else {
-          callback()
+        if(!value){
+          return callback(new Error("请输入账号"));
+        } else{
+          if (!validUsername(value)) {
+            callback(new Error(this.$t('login_page.error_message.username')))
+          } else {
+            callback()
+          }
         }
       }
       const validatePassword = (rule, value, callback) => {
@@ -123,7 +111,13 @@
           code: '123'
         },
         loginRules: {
-          username: [{ required: true, trigger: 'blur', validator: validateUsername }],
+          username: [
+            {
+              required: true,
+              trigger: 'blur',
+              validator: validateUsername
+            }
+            ],
           password: [{ required: true, trigger: 'blur', validator: validatePassword }],
           code: [{ required: true, trigger: 'blur', validator: validateCode }]
         },

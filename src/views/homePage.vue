@@ -93,7 +93,7 @@
           </div>
         </div>
         <p class="qy_footer_status">
-          <a :href="$t('index_page.footerList.footer_status.url')" >{{$t('index_page.footerList.footer_status.title')}}</a></p>
+          {{$t('index_page.footerList.footer_status.title')}}<a :href="$t('index_page.footerList.footer_status.url')" >{{$t('index_page.footerList.footer_status.record')}}</a></p>
       </div>
       <el-dialog  class="home_dialog" :title="$t('index_page.banner.register_dialog.title')" :visible.sync="dialogTableVisible" custom-class="role-mask">
         <p>{{ $t('index_page.banner.register_dialog.content_left')}}<span>{{ $t('index_page.banner.register_dialog.email')}}</span>{{ $t('index_page.banner.register_dialog.content_right')}}</p>

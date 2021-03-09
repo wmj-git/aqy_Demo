@@ -226,7 +226,8 @@ module.exports = {
         }
       ],
       footer_status: {
-        title: 'Copyright © 2020爱奇艺智能All Rights Reserved 渝ICP备18002599号',
+        title: 'Copyright © 2020爱奇艺智能All Rights Reserved',
+        record: '渝ICP备18002599号',
         url: 'https://beian.miit.gov.cn/'
       }
     }
