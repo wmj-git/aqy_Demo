@@ -252,7 +252,8 @@ input[type=checkbox] {
   margin-right: 28px;
   -webkit-appearance: none;
   box-sizing: content-box;
-  padding: 0; }
+  padding: 0;
+  border: none; }
   input[type=checkbox]::after {
     position: absolute;
     top: -4px;
@@ -336,6 +337,9 @@ div:focus {
   padding: 0 15px 0 35px; }
   .el-input__inner:focus {
     border-color: #00BF6C; }
+
+.remember .el-input__inner:focus {
+  border-color: transparent; }
 
 .el-input.code {
   width: 170px; }

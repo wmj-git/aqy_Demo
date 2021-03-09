@@ -42,6 +42,7 @@
           <div class="flex_layout" :class="current_lan=='en' ? 'en_flex': ''">
             <p class="check">
               <input class="remember" type="checkbox" name="remember" id="isCheck" @click="isCheck()" checked/>
+              <!--<el-input type="checkbox" class="remember" id="isCheck" @click="isCheck()" checked></el-input>-->
               <label for="isCheck">{{$t('login_page.login_info.remember_login')}}</label>
             </p>
             <p class="forget">{{$t('login_page.login_info.forget')}}</p>
