@@ -54,7 +54,6 @@
     width: 100%;
     min-height: 466px;
     background: url("../assets/img/banner.png") no-repeat center, linear-gradient(to right, #00cdd0, #353cc8);
-    //background-size: cover;
     position: relative;
     & .content_box{
       max-width: 1920px;
@@ -75,7 +74,6 @@
       position: absolute;
       right: 50%;
       top: 50%;
-      //margin-top: -85px;
       margin-top: -73px;
       transform: translateX(360px);
       & .banner_title {
@@ -89,14 +87,10 @@
       }
       & .banner_btn_box {
         border: 4px solid rgba(255, 255, 255, 0.35);
-     /*   width: 227px;
-        height: 50px;*/
         width: 195px;
         height: 40px;
         border-radius: 28px;
         & .banner_btn {
-         /* width: 227px;
-          height: 50px;*/
           width: 195px;
           height: 40px;
           background: #FFFFFF;
@@ -113,10 +107,8 @@
           }
         }
         &.banner_btn_en {
-          //width: 300px;
           width: 280px;
           & .banner_btn {
-            //width: 300px;
             width: 280px;
           }
         }
@@ -498,7 +490,6 @@
       &.banner_en {
         & .banner_content {
           right: 45%;
-          top: 49%;
         }
       }
       & .banner_content {
@@ -572,53 +563,3 @@
 
   }
 }
-/*@media screen and (min-width: 1921px)and (max-width: 2100px) {
-  .container {
-    & .index_banner{
-      background: url("../assets/img/banner_01.png") no-repeat 10px -85px, linear-gradient(to right, #00cdd0, #353cc8);
-      & .banner_content{
-        transform: translate(250px, 20px);
-      }
-    }
-  }
-}
-@media screen and (min-width: 2101px)and (max-width: 2350px) {
-  .container {
-    & .index_banner{
-      background: url("../assets/img/banner_01.png") no-repeat 50%  -85px, linear-gradient(to right, #00cdd0, #353cc8);
-      & .banner_content{
-        transform: translate(250px, 20px);
-      }
-    }
-  }
-}
-@media screen and (min-width: 2301px)and (max-width: 2500px) {
-  .container {
-    & .index_banner{
-      background: url("../assets/img/banner_01.png") no-repeat 250px -85px, linear-gradient(to right, #00cdd0, #353cc8);
-      & .banner_content{
-        transform: translate(250px, 20px);
-      }
-    }
-  }
-}
-@media screen and (min-width: 2501px)and (max-width: 3299px) {
-  .container {
-    & .index_banner{
-      background: url("../assets/img/banner_01.png") no-repeat 53% -85px, linear-gradient(to right, #00cdd0, #353cc8);
-      & .banner_content{
-        transform: translate(250px, 20px);
-      }
-    }
-  }
-}
-@media screen and (min-width: 3300px) {
-  .container {
-    & .index_banner{
-      background: url("../assets/img/banner_01.png") no-repeat 825px -85px, linear-gradient(to right, #00cdd0, #353cc8);
-      & .banner_content{
-        transform: translate(250px, 20px);
-      }
-    }
-  }
-}*/
