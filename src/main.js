@@ -13,6 +13,7 @@ import store from './store'
 import router from './router'
 
 import '@/icons' // icon
+import '@/assets/icons/iconfont.css' // icon
 import '@/permission' // permission control
 import '@/components/Pagination/page.js'
 if (process.env.NODE_ENV === 'production') {

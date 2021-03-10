@@ -9,7 +9,7 @@
                label-position="left">
         <el-form-item prop="username" class="form_item">
         <span class="svg-container">
-          <img src="@/assets/img/icon_user.png"/>
+          <span class="iconfont iconuser"></span>
         </span>
           <el-input
             v-model="loginForm.username"
@@ -18,7 +18,7 @@
         </el-form-item>
         <el-form-item prop="password" class="form_item">
         <span class="svg-container">
-                    <img src="@/assets/img/icon_password.png"/>
+            <span class="iconfont iconpassword"></span>
         </span>
           <el-input
             type="password"
@@ -30,7 +30,7 @@
         </el-form-item>
         <el-form-item prop="code" class="form_item">
          <span class="svg-container">
-                    <img src="@/assets/img/icon_code.png"/>
+               <span class="iconfont iconcode"></span>
          </span>
           <el-input
             class="code"

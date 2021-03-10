@@ -30,21 +30,21 @@ module.exports = {
           name: '奇遇3',
           u_name: '独立6自由度VR',
           btn_text: '使用QIYU SDK',
-          icon: require('../assets/img/logo_s.png')
+          icon: 'iconfavicon'
         },
         {
           img: require('../assets/img/product_02.png'),
           name: '奇遇2Pro',
           u_name: '独立6自由度VR',
           btn_text: '使用 VIVE WAVE™ SDK',
-          icon: require('../assets/img/logo_02.png')
+          icon: 'iconfavicon'
         },
         {
           img: require('../assets/img/product_03.png'),
           name: '奇遇2S',
           u_name: '独立3自由度VR',
           btn_text: '使用 VIVE WAVE™ SDK',
-          icon: require('../assets/img/logo_02.png')
+          icon: 'iconfavicon'
         }
       ]
     },
@@ -52,36 +52,36 @@ module.exports = {
       title: '为什么选择奇遇？',
       content_top: [
         {
-          img: require('../assets/img/pic_01.png'),
+          img: require('../assets/img/pic_01.svg'),
           name: '6DOF空间定位和多种输入支持',
           u_name: '毫米级6自由度手柄控制器，VR虚拟键盘，手势追踪（规划中)'
         },
         {
-          img: require('../assets/img/pic_02.png'),
+          img: require('../assets/img/pic_02.svg'),
           name: '主流游戏开发引擎',
           u_name: 'Unity，Unreal（规划中）'
         }
       ],
       content_center: [
         {
-          img: require('../assets/img/pic_03.png'),
+          img: require('../assets/img/pic_03.svg'),
           name: '3D空间音频',
           u_name: '满足360度沉浸式的声音设计，支持多平台音频插件。'
         },
         {
-          img: require('../assets/img/pic_04.png'),
+          img: require('../assets/img/pic_04.svg'),
           name: '高级渲染',
           u_name: '注视点渲染、VR合成器图层渲染、单通道渲染（规划中）'
         }
       ],
       content_bottom: [
         {
-          img: require('../assets/img/pic_05.png'),
+          img: require('../assets/img/pic_05.svg'),
           name: '节省视频和游戏存储费用',
           u_name: '提供免费的游戏DLC上传和下载、视频托管和播放的平台服务。'
         },
         {
-          img: require('../assets/img/pic_06.png'),
+          img: require('../assets/img/pic_06.svg'),
           name: 'VR测试工具',
           u_name: '提供简单易用的VR应用程序测试工具，实时获取性能指标。'
         }

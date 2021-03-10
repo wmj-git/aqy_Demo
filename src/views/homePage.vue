@@ -16,7 +16,7 @@
           <p class="banner_title title">{{$t('index_page.banner.title')}}</p>
           <p class="banner_sub_title sub_title">{{$t('index_page.banner.sub_title')}}</p>
           <div class="banner_btn_box" :class="[current_language=='en'?'banner_btn_en':'']">
-            <button class="banner_btn" @click="register()"><img src="../assets/img/icon_apply.png"/><span>{{$t('index_page.banner.btn_text')}}</span></button>
+            <button class="banner_btn" @click="register()"><span class="iconfont iconapply"></span><span>{{$t('index_page.banner.btn_text')}}</span></button>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@
             </div>
             <p class="pro_name">{{pro.name}}</p>
             <p class="pro_u_name">{{pro.u_name}}</p>
-            <button class="pro_button"><img :src="pro.icon"/><span>{{pro.btn_text}}</span></button>
+            <button class="pro_button"><span class="iconfont" :class="pro.icon"></span><span>{{pro.btn_text}}</span></button>
           </div>
         </div>
       </div>
