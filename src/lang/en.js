@@ -234,6 +234,9 @@ module.exports = {
     }
   },
   login_page: {
+    back: {
+      title: 'Back'
+    },
     placeholder: {
       username: 'Account',
       pwd: 'Password',

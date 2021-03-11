@@ -1,5 +1,7 @@
 <template>
   <div class="login-container">
+    <a class="back"> <span class="iconfont iconback"></span>
+      {{$t('login_page.back.title')}}</a>
     <div class="login_img">
       <img src="@/assets/img/pic_login.png"/>
     </div>
@@ -14,7 +16,7 @@
           <el-input
             v-model="loginForm.username"
             :placeholder="$t('login_page.placeholder.username')"
-           />
+          />
         </el-form-item>
         <el-form-item prop="password" class="form_item">
         <span class="svg-container">
@@ -26,7 +28,7 @@
             :placeholder="$t('login_page.placeholder.pwd')"
             maxlength="6"
             @keyup.enter.native="handleLogin"
-            />
+          />
         </el-form-item>
         <el-form-item prop="code" class="form_item">
          <span class="svg-container">
@@ -72,14 +74,15 @@
   import { validUsername } from '@/utils/validate'
   import Index from '../../components/common/table/index'
   import { Base64 } from 'js-base64'
+
   export default {
     name: 'Login',
     components: { Index },
     data() {
       const validateUsername = (rule, value, callback) => {
-        if(!value){
-          return callback(new Error("请输入账号"));
-        } else{
+        if (!value) {
+          return callback(new Error('请输入账号'))
+        } else {
           if (!validUsername(value)) {
             callback(new Error(this.$t('login_page.error_message.username')))
           } else {
@@ -118,7 +121,7 @@
               trigger: 'blur',
               validator: validateUsername
             }
-            ],
+          ],
           password: [{ required: true, trigger: 'blur', validator: validatePassword }],
           code: [{ required: true, trigger: 'blur', validator: validateCode }]
         },

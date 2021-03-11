@@ -233,6 +233,9 @@ module.exports = {
     }
   },
   login_page: {
+    back: {
+      title: '返回'
+    },
     placeholder: {
       username: '账号',
       pwd: '密码',

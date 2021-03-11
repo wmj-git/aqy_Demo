@@ -7,6 +7,18 @@
   justify-content: center;
   text-align: center;
   background-color: #f5f5f7;
+  & .back{
+    position: relative;
+    left: -36px;
+    top: -316px;
+    color: #999;
+    font-size: 18px;
+    & .iconback{
+      color: #00BF6C;
+      font-size: 20px;
+      padding-right: 4px;
+    }
+  }
   & .login_img {
     margin-right: 60px;
   }
@@ -40,6 +52,7 @@
           color: #666;
           font-size: 14px;
           font-weight: normal;
+          line-height: 14px;
           &:hover {
             cursor: pointer;
           }
