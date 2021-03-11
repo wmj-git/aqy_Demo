@@ -17,6 +17,7 @@
       color: #fff;
       & .logo_img {
         transform: translateX(360px);
+        width: 13%;
       }
       & .text_right {
         transform: translateX(-360px);
@@ -159,6 +160,19 @@
           }
           &:nth-child(2) {
             margin: 0 10px;
+            & img{
+              width: 80%;
+            }
+          }
+          &:last-child{
+            & img{
+              width: 70%;
+            }
+          }
+          &:first-child{
+            & img{
+              width: 80%;
+            }
           }
           & .pro_name {
             font-size: 18px;

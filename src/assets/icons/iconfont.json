@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "20286058",
+      "name": "htc",
+      "font_class": "htc",
+      "unicode": "e6b7",
+      "unicode_decimal": 59063
+    },
+    {
       "icon_id": "20283554",
       "name": "code",
       "font_class": "code",

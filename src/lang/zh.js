@@ -2,7 +2,7 @@ module.exports = {
   index_page: {
     index_nav: {
       nav_list: ['开发文档', '发布管理', '我的账号'],
-      logo: require('../assets/img/logo.png')
+      logo: require('../assets/img/logo@2x.png')
     },
     navBar: {
       account: require('../assets/img/account.png')
@@ -26,25 +26,25 @@ module.exports = {
       introduce: '无论您是开发虚拟现实游戏、社交体验、娱乐或教育类应用，都可以使用主流的游戏引擎或我们的原生SDK，轻松地在奇遇平台上进行开发。',
       content: [
         {
-          img: require('../assets/img/product_01.png'),
+          img: require('../assets/img/product_01@2x.png'),
           name: '奇遇3',
           u_name: '独立6自由度VR',
           btn_text: '使用QIYU SDK',
           icon: 'iconfavicon'
         },
         {
-          img: require('../assets/img/product_02.png'),
+          img: require('../assets/img/product_02@2x.png'),
           name: '奇遇2Pro',
           u_name: '独立6自由度VR',
           btn_text: '使用 VIVE WAVE™ SDK',
-          icon: 'iconfavicon'
+          icon: 'iconhtc'
         },
         {
-          img: require('../assets/img/product_03.png'),
+          img: require('../assets/img/product_03@2x.png'),
           name: '奇遇2S',
           u_name: '独立3自由度VR',
           btn_text: '使用 VIVE WAVE™ SDK',
-          icon: 'iconfavicon'
+          icon: 'iconhtc'
         }
       ]
     },

@@ -2,7 +2,7 @@ module.exports = {
   index_page: {
     index_nav: {
       nav_list: ['Develop', 'Distribute', 'Account'],
-      logo: require('../assets/img/logo_en.png')
+      logo: require('../assets/img/logo_en@2x.png')
     },
     navBar: {
       account: require('../assets/img/account.png')
@@ -30,21 +30,21 @@ module.exports = {
           name: 'QIYU 3',
           u_name: 'All-in-one 6DOF VR Headset',
           btn_text: 'Use QIYU SDK',
-          icon: require('../assets/img/logo_s.png')
+          icon: 'iconfavicon'
         },
         {
           img: require('../assets/img/product_02.png'),
           name: 'QIYU 2Pro',
           u_name: 'All-in-one 6DOF VR Headset',
           btn_text: 'Use VIVE WAVE™ SDK',
-          icon: require('../assets/img/logo_02.png')
+          icon: 'iconhtc'
         },
         {
           img: require('../assets/img/product_03.png'),
           name: 'QIYU 2S',
           u_name: 'All-in-one 3DOF VR Headset',
           btn_text: 'Use VIVE WAVE™ SDK',
-          icon: require('../assets/img/logo_02.png')
+          icon: 'iconhtc'
         }
       ]
     },
