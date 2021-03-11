@@ -206,7 +206,7 @@ module.exports = {
           ],
           footer_link: {
             title: 'Check the position >>',
-            url: 'http://www.jd.com'
+            url: ''
           }
         },
         {

@@ -94,7 +94,7 @@ module.exports = {
           footer_nav: [
             {
               title: '奇遇3',
-              url: 'http://www.taobao.com'
+              url: ''
             },
             {
               title: '奇遇2Pro',
@@ -205,7 +205,7 @@ module.exports = {
           ],
           footer_link: {
             title: '查看职位>>',
-            url: 'http://www.jd.com'
+            url: ''
           }
         },
         {

@@ -20,7 +20,7 @@
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
          <router-link to="/">
             <el-dropdown-item>
-              Home
+              <router-link :to="{path:'/homePage'}">Home</router-link>
             </el-dropdown-item>
           </router-link>
           <!-- <a target="_blank" href="https://github.com/PanJiaChen/vue-admin-template/">

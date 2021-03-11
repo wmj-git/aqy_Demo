@@ -23,16 +23,16 @@ export const constantRoutes = [
     hidden: true
   },
   {
-    path: '/',
+    path: '/index',
     component: Layout,
     name: 'main_menu.route.home_page',
-    redirect: '/index', // 重定向地址，在面包屑中点击会重定向去的地址
+    redirect: '/homePage', // 重定向地址，在面包屑中点击会重定向去的地址
     // hidden: false, // 不在侧边栏显示
     // alwaysShow: true, // 一直显示根路由
     meta: { title: 'main_menu.route.home_page', icon: 'dashboard', affix: false },
     children: [
       {
-        path: 'index',
+        path: '/index',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
         meta: { title: 'main_menu.route.account', icon: 'dashboard', affix: true }
@@ -60,7 +60,7 @@ export const constantRoutes = [
       }
     ]
   },
-  { path: '*', redirect: '/404', hidden: true }
+  { path: '*', redirect: '/index', hidden: true }
 ]
 
 const createRouter = () => new Router({

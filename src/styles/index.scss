@@ -62,10 +62,9 @@ button:hover {
 }
 
 input::-webkit-input-placeholder {
-  color: #e6e6e6;
+  color: #999;
   font-size: 12px;
 }
-
 input[type=checkbox] {
   cursor: pointer;
   position: relative;
@@ -102,7 +101,7 @@ input[type=checkbox] {
 
 /*表单错误提示信息*/
 .el-form-item__error {
-  padding-top: 8px;
+  padding-top: 9px;
 }
 
 .el-button + .el-button {
@@ -180,6 +179,10 @@ div:focus {
   padding: 0 15px 0 35px;
   &:focus{
     border-color: #00BF6C;
+  }
+  &::placeholder {
+    color: #999;
+    font-size: 14px;
   }
 }
 .remember .el-input__inner{

@@ -239,7 +239,7 @@ button:hover {
   cursor: pointer; }
 
 input::-webkit-input-placeholder {
-  color: #e6e6e6;
+  color: #999;
   font-size: 12px; }
 
 input[type=checkbox] {
@@ -251,7 +251,6 @@ input[type=checkbox] {
   font-size: 14px;
   margin-right: 28px;
   -webkit-appearance: none;
-  box-sizing: content-box;
   padding: 0;
   border: none; }
   input[type=checkbox]::after {
@@ -274,7 +273,7 @@ input[type=checkbox] {
 
 /*表单错误提示信息*/
 .el-form-item__error {
-  padding-top: 8px; }
+  padding-top: 9px; }
 
 .el-button + .el-button {
   margin: 0; }
@@ -337,6 +336,9 @@ div:focus {
   padding: 0 15px 0 35px; }
   .el-input__inner:focus {
     border-color: #00BF6C; }
+  .el-input__inner::placeholder {
+    color: #999;
+    font-size: 14px; }
 
 .remember .el-input__inner:focus {
   border-color: transparent; }
