@@ -151,27 +151,22 @@
       },
       register() {
         this.dialogTableVisible = true
+      },
+      isLoginToken(){
+        let _getToken = this.$store.getters.token
+        if (_getToken !== undefined || _getToken !== null) {
+          this.isLogin = true
+        } else{
+          this.isLogin = false
+        }
+        console.log('isLogin', this.isLogin)
       }
     },
     updated() {
       this.current_language = this.$i18n.locale
     },
     mounted() {
-      let _getToken = this.$store.getters.token
-      if (_getToken !== undefined || _getToken !== null) {
-        this.isLogin = true
-      } else{
-        console.log(11)
-        this.isLogin = false
-      }
-      /*let _getToken = getToken()
-      if (_getToken === undefined || _getToken !== null) {
-        this.isLogin = false
-      } else{
-        console.log(11)
-        this.isLogin = true
-      }
-      console.log('isLogin', this.isLogin)*/
+      this.isLoginToken()
     }
   }
 </script>
