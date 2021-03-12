@@ -1,7 +1,21 @@
 module.exports = {
   index_page: {
     index_nav: {
-      nav_list: ['开发文档', '发布管理', '我的账号'],
+      nav_list: [{
+        title: '开发文档',
+        url: '',
+        login: '/login'
+      },
+      {
+        title: '发布管理',
+        url: '/use/application',
+        login: '/login'
+      },
+      {
+        title: '我的账号',
+        url: '/account',
+        login: '/login'
+      }],
       logo: require('../assets/img/logo@2x.png')
     },
     navBar: {
@@ -17,7 +31,9 @@ module.exports = {
         content_left: '奇遇开发者注册采取邀请制，请先填写资料发送至',
         content_right: '，商务人员将会在1~5个工作日与您联系并分配账号信息。',
         link: '下载资料模板>',
-        url: ''
+        url: '',
+        toLogin: '已有账号？',
+        toLogin_url: '/login'
       }
     },
     product: {
@@ -233,9 +249,6 @@ module.exports = {
     }
   },
   login_page: {
-    back: {
-      title: '返回'
-    },
     placeholder: {
       username: '账号',
       pwd: '密码',

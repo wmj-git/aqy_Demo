@@ -56,7 +56,7 @@
     min-height: 466px;
     background: url("../assets/img/banner.png") no-repeat center, linear-gradient(to right, #00cdd0, #353cc8);
     position: relative;
-    & .content_box{
+    & .content_box {
       max-width: 1920px;
       height: 466px;
       margin: 0 auto;
@@ -85,6 +85,12 @@
       & .banner_sub_title {
         color: #EFF3F6;
         font-size: 19px;
+      }
+      &.is_login {
+        margin-top: -55px;
+        & .banner_btn_box {
+          display: none;
+        }
       }
       & .banner_btn_box {
         border: 4px solid rgba(255, 255, 255, 0.35);
@@ -160,17 +166,17 @@
           }
           &:nth-child(2) {
             margin: 0 10px;
-            & img{
+            & img {
               width: 80%;
             }
           }
-          &:last-child{
-            & img{
+          &:last-child {
+            & img {
               width: 70%;
             }
           }
-          &:first-child{
-            & img{
+          &:first-child {
+            & img {
               width: 80%;
             }
           }
@@ -225,7 +231,6 @@
               font-weight: bold;
               color: #000;
               margin: 57px 0 19px;
-              overflow: hidden;
               text-overflow: ellipsis;
               display: -webkit-box;
               -webkit-line-clamp: 1;
@@ -260,7 +265,7 @@
                 .pro_u_name {
                   //margin-bottom: 35px;
                 }
-                img{
+                img {
                   width: 424px;
                 }
               }
@@ -270,7 +275,7 @@
                 .pro_u_name {
                   //padding-bottom: 28px;
                 }
-                img{
+                img {
                   width: 416px;
                 }
               }
@@ -284,7 +289,7 @@
                 .pro_u_name {
                   //padding-bottom: 35px;
                 }
-                img{
+                img {
                   width: 408px;
                 }
               }
@@ -294,7 +299,7 @@
                 .pro_u_name {
                   //padding-bottom: 42px;
                 }
-                img{
+                img {
                   width: 412px;
                 }
               }
@@ -308,7 +313,7 @@
                 .pro_u_name {
                   //margin-bottom: 58px;
                 }
-                img{
+                img {
                   width: 401px;
                 }
               }
@@ -328,7 +333,7 @@
                     line-height: 16px;
                   }
                 }
-                img{
+                img {
                   width: 390px;
                 }
               }
@@ -463,6 +468,7 @@
     color: #fff;
     font-size: 18px;
     border: none;
+    margin-bottom: 20px;
   }
   & .dialog-footer {
     text-align: left;
@@ -477,17 +483,18 @@
   }
 }
 
-.iconapply{
+.iconapply {
   font-size: 32px;
   padding-right: 6px;
 }
-@media screen and (max-width: 1024px){
-  .container{
-    & .index_banner{
+
+@media screen and (max-width: 1024px) {
+  .container {
+    & .index_banner {
       background: url("../assets/img/banner.png") no-repeat -175px 0, linear-gradient(to right, #00cdd0, #353cc8);
       background-size: cover;
-      &.banner_en{
-        & .banner_content{
+      &.banner_en {
+        & .banner_content {
           right: 42%;
         }
       }
@@ -495,13 +502,15 @@
     }
   }
 }
-@media screen and (max-width: 1366px){
-  .container{
-   /* & .index_banner{
-      min-height: 450px;
-    }*/
+
+@media screen and (max-width: 1366px) {
+  .container {
+    /* & .index_banner{
+       min-height: 450px;
+     }*/
   }
 }
+
 @media screen and(min-width: 1366px) and (max-width: 1679px) {
   .container {
     /*& .index_banner {
@@ -515,12 +524,12 @@
 
 @media screen and(min-width: 1680px) and (max-width: 1919px) {
   .container {
-   /* & .index_banner {
-      & .banner_content {
-        right: 17%;
-        //transform: translate(-437px, 250px) !important;
-      }
-    }*/
+    /* & .index_banner {
+       & .banner_content {
+         right: 17%;
+         //transform: translate(-437px, 250px) !important;
+       }
+     }*/
   }
 }
 

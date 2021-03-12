@@ -23,7 +23,7 @@ export const constantRoutes = [
     hidden: true
   },
   {
-    path: '/index',
+    path: '/',
     component: Layout,
     name: 'main_menu.route.home_page',
     redirect: '/homePage', // 重定向地址，在面包屑中点击会重定向去的地址
@@ -32,7 +32,7 @@ export const constantRoutes = [
     meta: { title: 'main_menu.route.home_page', icon: 'dashboard', affix: false },
     children: [
       {
-        path: '/index',
+        path: '/account',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
         meta: { title: 'main_menu.route.account', icon: 'dashboard', affix: true }

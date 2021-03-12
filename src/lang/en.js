@@ -1,7 +1,21 @@
 module.exports = {
   index_page: {
     index_nav: {
-      nav_list: ['Develop', 'Distribute', 'Account'],
+      nav_list: [{
+        title: '开发文档',
+        url: '',
+        login: '/login'
+      },
+      {
+        title: 'Develop',
+        url: '/use/application',
+        login: '/login'
+      },
+      {
+        title: 'Account',
+        url: '/account',
+        login: '/login'
+      }],
       logo: require('../assets/img/logo_en@2x.png')
     },
     navBar: {
@@ -12,12 +26,14 @@ module.exports = {
       sub_title: 'Focus on the high-quality VR/AR application',
       btn_text: 'Apply to QIYU developer',
       register_dialog: {
-        title: '申请加入开发者',
+        title: 'Developer Application',
         email: 'developer_smart@qiyi.com',
-        content_left: '奇遇开发者注册采取邀请制，请先填写资料发送至',
-        content_right: '，商务人员将会在1~5个工作日与您联系并分配账号信息。',
-        link: '下载资料模板>',
-        url: ''
+        content_left: 'QIYU developer registration adopts an invitation system. Please fill in the information and send it to',
+        content_right: '. The business staff will contact you within 1 to 5 working days and assign account information.',
+        link: 'Download Template>',
+        url: '',
+        toLogin: 'Existing account number？',
+        toLogin_url: '/login'
       }
     },
     product: {
@@ -234,9 +250,6 @@ module.exports = {
     }
   },
   login_page: {
-    back: {
-      title: 'Back'
-    },
     placeholder: {
       username: 'Account',
       pwd: 'Password',

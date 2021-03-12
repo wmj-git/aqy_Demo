@@ -74,8 +74,10 @@ export default {
     },
     async logout() {
       await this.$store.dispatch('user/logout')
-      this.$router.push(`/login?redirect=${this.$route.fullPath}`)
+      console.log('dd', `${this.$route.fullPath}`)
+      this.$router.push(`/login?redirect=${this.$route.fullPath}`) // 登出返回登录
     }
+
   },
   created() {
     // 只有在标签页列表里的页面才使用keep-alive，即关闭标签之后就不保存到内存中了。

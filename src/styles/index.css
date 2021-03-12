@@ -301,7 +301,10 @@ div:focus {
   margin-top: -250px !important; }
 
 .home_dialog .el-dialog.role-mask {
-  height: 310px; }
+  height: 360px; }
+
+.dialog_en.home_dialog .el-dialog.role-mask {
+  height: 410px; }
 
 .el-dialog__header {
   font-size: 24px;

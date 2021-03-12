@@ -1,7 +1,5 @@
 <template>
   <div class="login-container">
-    <a class="back"> <span class="iconfont iconback"></span>
-      {{$t('login_page.back.title')}}</a>
     <div class="login_img">
       <img src="@/assets/img/pic_login.png"/>
     </div>
@@ -39,6 +37,7 @@
             v-model="loginForm.code"
             :placeholder="$t('login_page.placeholder.code')"
           />
+          <span></span>
         </el-form-item>
         <el-form-item class="form_item">
           <div class="flex_layout" :class="current_lan=='en' ? 'en_flex': ''">
@@ -151,6 +150,10 @@
     },
     mounted() {
       this.current_lan = this.$i18n.locale
+      let _token = this.$store.getters.token
+      if(_token == undefined){
+        this.$router.push('/homePage')
+      }
       //绑定事件
       window.addEventListener('keydown', this.keyDown)
     },
@@ -168,8 +171,7 @@
             if (valid) {
               this.loading = true
               this.$store.dispatch('user/login', this.loginForm).then(() => {
-                console.log('dad', this.redirect);
-                this.$router.push({ path: this.redirect || '/' })
+                this.$router.push('/')
                 this.loading = false
                 if (this.isRemember) {
                   this.setCookie('user', this.loginForm.username, 30)
