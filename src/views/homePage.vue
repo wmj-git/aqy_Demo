@@ -114,9 +114,11 @@
         <el-button class="register_btn" @click="dialogTableVisible = false">
           {{$t('index_page.banner.register_dialog.link')}}
         </el-button>
-        <el-button class="register_btn" @click="dialogTableVisible = false">
-          <router-link :to="$t('index_page.banner.register_dialog.toLogin_url')">{{$t('index_page.banner.register_dialog.toLogin')}}</router-link>
-        </el-button>
+        <router-link :to="$t('index_page.banner.register_dialog.toLogin_url')">
+        <a @click="dialogTableVisible = false">
+         {{$t('index_page.banner.register_dialog.toLogin')}}
+        </a>
+        </router-link>
       </div>
     </el-dialog>
   </div>
@@ -153,12 +155,13 @@
         this.dialogTableVisible = true
       },
       isLoginToken(){
-        let _getToken = this.$store.getters.token
-        if (_getToken !== undefined || _getToken !== null) {
-          this.isLogin = true
-        } else{
+        let _getToken = getToken()
+        if (_getToken === undefined || _getToken === null) {
           this.isLogin = false
+        } else{
+          this.isLogin = true
         }
+        console.log('d', _getToken)
         console.log('isLogin', this.isLogin)
       }
     },

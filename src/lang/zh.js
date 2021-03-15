@@ -26,7 +26,7 @@ module.exports = {
       sub_title: '专注优质VR/AR应用游戏的开发和运营',
       btn_text: '申请成为开发者',
       register_dialog: {
-        title: '申请加入开发者',
+        title: '申请成为开发者',
         email: 'developer_smart@qiyi.com',
         content_left: '奇遇开发者注册采取邀请制，请先填写资料发送至',
         content_right: '，商务人员将会在1~5个工作日与您联系并分配账号信息。',
@@ -268,9 +268,14 @@ module.exports = {
     },
     login_btn_text: ['登录', '申请成为开发者'],
     register: {
-      title: '注册',
-      content: '加入奇遇开发者需要先填写相关资料，待商务审核通过后，分配账号信息。',
-      btn_text: '联系商务人员'
+      title: '申请成为开发者',
+      email: 'developer_smart@qiyi.com',
+      content_left: '奇遇开发者注册采取邀请制，请先填写资料发送至',
+      content_right: '，商务人员将会在1~5个工作日与您联系并分配账号信息。',
+      link: '下载资料模板>',
+      url: '',
+      toLogin: '已有账号？',
+      toLogin_url: '/login'
     }
   },
   main_menu: {

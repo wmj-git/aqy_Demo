@@ -115,12 +115,30 @@
     color: #fff;
     font-size: 18px;
     border: none;
+    margin-bottom: 20px;
+  }
+  & .dialog-footer {
+    & a {
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+      color: #00BF6C;
+    }
+  }
+  .el-dialog__body span{
+    color: #00BF6C;
+  }
+  & .qy_footer_status {
+    position: absolute;
+    bottom: 26px;
   }
 }
-.iconfont{
+
+.iconfont {
   font-size: 20px;
   color: #858589;
 }
+
 input::-webkit-input-placeholder {
   color: #999;
   font-size: 14px;

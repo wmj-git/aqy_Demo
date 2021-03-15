@@ -269,9 +269,14 @@ module.exports = {
     },
     login_btn_text: ['Login', 'Developer application'],
     register: {
-      title: 'Register',
-      content: '加入奇遇开发者需要先填写相关资料，待商务审核通过后，分配账号信息。',
-      btn_text: '联系商务人员'
+      title: 'Developer Application',
+      email: 'developer_smart@qiyi.com',
+      content_left: 'QIYU developer registration adopts an invitation system. Please fill in the information and send it to',
+      content_right: '. The business staff will contact you within 1 to 5 working days and assign account information.',
+      link: 'Download Template>',
+      url: '',
+      toLogin: 'Existing account number？',
+      toLogin_url: '/login'
     }
   },
   main_menu: {

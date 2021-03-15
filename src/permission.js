@@ -48,8 +48,9 @@ router.beforeEach(async(to, from, next) => {
     /* has no token*/
     if (to.path === '/homePage') {
       console.log('没登录', `${to.path}`)
-    }
-    if (whiteList.indexOf(to.path) !== -1) {
+      next()
+      NProgress.done()
+    }else if (whiteList.indexOf(to.path) !== -1) {
       // 在免费登录白名单中，直接进入
       next()
     } else {

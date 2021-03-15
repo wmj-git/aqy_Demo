@@ -58,12 +58,23 @@
         </el-button>
       </el-form>
     </div>
-    <el-dialog class="register_dialog" :title="$t('login_page.register.title')" :visible.sync="dialogTableVisible"
-               custom-class="role-mask">
-      <p>{{ $t('login_page.register.content')}}</p>
+    <div class="qy_footer_status">
+      {{$t('index_page.footerList.footer_status.title')}}<a :href="$t('index_page.footerList.footer_status.url')">{{$t('index_page.footerList.footer_status.record')}}</a>
+    </div>
+    <el-dialog class="home_dialog" :class="[current_language == 'en'?'dialog_en': '']"
+               :title="$t('login_page.register.title')"
+               :visible.sync="dialogTableVisible" custom-class="role-mask">
+      <p>{{ $t('login_page.register.content_left')}}<span>{{ $t('login_page.register.email')}}</span>{{
+        $t('login_page.register.content_right')}}</p>
       <div slot="footer" class="dialog-footer">
-        <el-button class="register_btn" @click="dialogTableVisible = false">{{$t('login_page.register.btn_text')}}
+        <el-button class="register_btn" @click="dialogTableVisible = false">
+          {{$t('login_page.register.link')}}
         </el-button>
+        <router-link :to="$t('login_page.register.toLogin_url')">
+          <a @click="dialogTableVisible = false">
+            {{$t('login_page.register.toLogin')}}
+          </a>
+        </router-link>
       </div>
     </el-dialog>
   </div>
@@ -105,6 +116,7 @@
       }
       return {
         dialogTableVisible: false,
+        current_language: '',
         isRemember: true,
         activeIndex: 0,
         current_lan: '',
@@ -151,11 +163,14 @@
     mounted() {
       this.current_lan = this.$i18n.locale
       let _token = this.$store.getters.token
-      if(_token == undefined){
+      if(_token != undefined){
         this.$router.push('/homePage')
       }
       //绑定事件
       window.addEventListener('keydown', this.keyDown)
+    },
+    updated() {
+      this.current_language = this.$i18n.locale
     },
     methods: {
       keyDown(e) {
